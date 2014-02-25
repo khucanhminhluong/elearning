@@ -1,5 +1,5 @@
-tmp/*
+tmp/logs/*
 [Cc]onfig/database.php
-app/tmp/*
+app/tmp/logs/*
 app/[Cc]onfig/database.php
 !empty
