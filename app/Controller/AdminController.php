@@ -17,5 +17,8 @@ class AdminController extends AppController {
 		$pageTitle = 'Home';
 		$this->set(compact('pageTitle'));
 	}
+
+	public function test() {
+	}
 }	
 ?>
