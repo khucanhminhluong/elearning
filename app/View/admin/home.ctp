@@ -19,9 +19,9 @@ $paid = array('Unpaid', 'Paid');
 $paid_label = array('warning', 'success');
 
 $transactions = array(
-	'total_student' => '2',
-	'total_teacher' => '3',
-	'total_profit' => '100000',
+	'total_student' => '1',
+	'total_teacher' => '1',
+	'total_profit' => '40000',
 	'info' => array(
 			array(
 				'date' => date('d/m/Y', time()),
@@ -59,7 +59,7 @@ $transactions = array(
 						<tbody>
 							<tr>
 								<td>Total transactions</td>
-								<td><?php echo isset($transactions) ? count($transactions) : '0'?></td>
+								<td><?php echo isset($transactions) ? count($transactions['info']) : '0'?></td>
 							</tr>
 							<tr>
 								<td>Total students</td>
