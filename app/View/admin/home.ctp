@@ -22,18 +22,25 @@ $transactions = array(
 	'total_student' => '2',
 	'total_teacher' => '3',
 	'total_profit' => '100000',
-	array(
-		'date' => date('d/m/Y', time()),
-		'lesson' => 'ls001',
-		'student' => 'lucilucency',
-		'teacher' => 'gondai',
-		'paid' => 1
-		),
-	array(
-
+	'info' => array(
+			array(
+				'date' => date('d/m/Y', time()),
+				'lesson' => 'ls001',
+				'student' => 'lucilucency',
+				'teacher' => 'gondai',
+				'cost' => '20000',
+				'paid' => 1
+				),
+			array(
+				'date' => date('d/m/Y', time()),
+				'lesson' => 'ls001',
+				'student' => 'lucilucency',
+				'teacher' => 'gondai',
+				'cost' => '20000',
+				'paid' => 0
+				)
+			)
 		)
-	)
-
 
 ?>
 
@@ -81,74 +88,19 @@ $transactions = array(
 							</tr>
 						</thead>
 						<tbody>
-						<?php if (isset($transactions)) : ?>
-							<?php foreach ($transactions as $key => $transaction) : ?>
+						<?php if (isset($transactions['info'])) : ?>
+							<?php foreach ($transactions['info'] as $key => $transaction) : ?>
 							<tr>
-								<td><?php echo $key ?></td>
+								<td><?php echo $key + 1 ?></td>
 								<td><?php echo $transaction['date'] ?></td>
 								<td><?php echo $transaction['lesson'] ?></td>
-								<td><a href=""><?php echo $transaction['student'] ?></a></td>
-								<td><a href=""><?php echo $transaction['teacher'] ?></a></td>
-								<td class="align-right"><?php echo $transaction['cost'] ?> <span class="label label-<?php echo $paid_label[$transaction['paid']]?>success label-sm"><?php echo $paid[$transaction['paid']]?></span></td>
+								<td><a href="/admin/student/<?php echo $transaction['student'] ?>"><?php echo $transaction['student'] ?></a></td>
+								<td><a href="/admin/teacher/<?php echo $transaction['teacher'] ?>"><?php echo $transaction['teacher'] ?></a></td>
+								<td class="align-right"><?php echo $transaction['cost'] ?> <span class="label label-<?php echo $paid_label[$transaction['paid']]?> label-sm"><?php echo $paid[$transaction['paid']]?></span></td>
 							</tr>
 							<?php endforeach; ?>
 						<?php endif ?>
-							<tr>
-								<td>2</td>
-								<td>Tus Jan 28 2014 14:48:06</td>
-								<td>mz003</td>
-								<td><a href="">tanvn</a></td>
-								<td><a href="">abc_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-warning label-sm"></span></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Tus Jan 28 2014 14:48:06</td>
-								<td>mz007</td>
-								<td><a href="">quanpd</a></td>
-								<td><a href="">abc_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>Mon Jan 27 2014 14:48:06</td>
-								<td>mz005</td>
-								<td><a href="">hieumd</a></td>
-								<td><a href="">abc_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>Mon Jan 27 2014 14:48:06</td>
-								<td>mz009</td>
-								<td><a href="">hieumd</a></td>
-								<td><a href="">def_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>Sun Jan 26 2014 06:48:06</td>
-								<td>mz003</td>
-								<td><a href="">quanpd</a></td>
-								<td><a href="">ghj_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>Sun Jan 26 2014 06:48:06</td>
-								<td>mz005</td>
-								<td><a href="">quanpd</a></td>
-								<td><a href="">abc_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td>Sun Jan 26 2014 06:48:06</td>
-								<td>mz005</td>
-								<td><a href="">quanpd</a></td>
-								<td><a href="">abc_sensei</a></td>
-								<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>
