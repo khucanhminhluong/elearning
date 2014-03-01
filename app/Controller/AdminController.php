@@ -13,12 +13,46 @@ class AdminController extends AppController {
         return parent::beforeFilter();
     }
 
+   	public function test() {
+
+	}
+
 	public function index() {
 		$pageTitle = 'Home';
 		$this->set(compact('pageTitle'));
 	}
 
-	public function test() {
+
+	public function home() {
+
+	}
+
+	public function lesson() {
+
+	}
+
+	public function file() {
+
+	}
+
+	public function student() {
+
+	}
+
+	public function teacher() {
+
+	}
+
+	public function moderator() {
+		
+	}
+
+	public function payment() {
+
+	}
+
+	public function config() {
+
 	}
 }	
 ?>

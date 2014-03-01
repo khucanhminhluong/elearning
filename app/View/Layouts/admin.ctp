@@ -38,21 +38,22 @@
 	<!--<?php echo $this->element('sql_dump'); ?>-->
 		<!--Start header-->
 		<div class="header navbar navbar-inverse navbar-fixed-top">
-			<?php //echo $this->element('Layouts' . DS . 'admin_header');?>
+			<?php echo $this->element('admin' .DS . 'layouts' . DS . 'admin_header');?>
 		</div>
 		<!--End	header-->
 		<div class="page-container">
 			<!-- Start sidebar -->
-			<?php  //echo $this->element('Layouts' . DS . 'admin_sidebar') ?>
+			<?php  echo $this->element('admin' .DS . 'layouts' . DS . 'admin_sidebar') ?>
 			<!-- End sidebar -->
 		</div>
 		<!--Start container-->		
-		<div class="page-content">			
-		    	<?php echo $content_for_layout ?>
+		<div class="page-content">
+			<?php //echo $this->element('admin' . DS . 'page_info'); ?>
+		    <?php echo $content_for_layout ?>
 		</div>
 		<!--End	container-->
 		<!--Start footer-->
-		<?php echo $this->element('Layouts' . DS . 'footer');?>
+		<?php echo $this->element('admin' .DS . 'layouts' . DS . 'footer');?>
 		<!--End	footer-->
 	<!--End	body-->
 </body>

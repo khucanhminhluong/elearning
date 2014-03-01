@@ -16,7 +16,7 @@
 			</form>
 		</li>
 		<li class="start active open">
-			<a href="./home.htm">
+			<a href="/elearning/admin/home">
 			<i class="fa fa-home"></i> 
 			<span class="title">Home</span>
 			</a>
