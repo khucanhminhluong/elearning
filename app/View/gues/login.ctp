@@ -3,7 +3,7 @@
     <div class="box">
         <div class="login_box">
             <div class="login_toggle">
-                <span class="arr_icon"><img src="images/icon/icon_arrow_login.png" /></span>
+                <span class="arr_icon"><img src="../img/icon/icon_arrow_login.png" /></span>
                 <span class="toggle_text">Already have a E-Learning account?</span>
                 <?php echo $this->Form->create('User'); ?>
                     <label>
@@ -24,7 +24,7 @@
                         <input checked="checked" class="checkbox" id="remember" name="remember" type="checkbox" value="1"> Keep me logged in
                     </label>                    
                  <?php echo $this->Form->end(); ?>
-                <span class="arr_icon"><img src="images/icon/icon_arrow_login.png" /></span>
+                <span class="arr_icon"><img src="../img/icon/icon_arrow_login.png" /></span>
                 <span class="toggle_text">New to Student or Teacher? <a href="">Sign up</a> for a free account.</span>
             </div>
         </div>

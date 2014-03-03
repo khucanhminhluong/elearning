@@ -6,9 +6,9 @@
             <input type="button" value="Search" class="btn_search"/>
         </div>
         <div id="login">
-            <span><a class="fancybox fancybox.iframe" href="#">Login</a></span>
+            <span><a class="fancybox fancybox.iframe" href="gues/login">Login</a></span>
             <span style="color:#fff">/</span>
-            <span><a href="#">Sign up</a></span>
+            <span><a href="gues/sign_up">Sign up</a></span>
         </div>
     </div>
 </div>
