@@ -182,6 +182,7 @@ CakeLog::config('error', array(
 
 
 /** This enable the Upload plugin */
-CakePlugin::load('Upload');
+//CakePlugin::load('Uploader');
+CakePlugin::loadAll();
 
 

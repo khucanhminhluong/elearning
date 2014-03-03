@@ -39,6 +39,12 @@
 		</div>
 	</div>
 </div>
+
+<?php echo $this->Form->create('File', array('type' => 'file')); ?>
+// Other inputs
+<?php echo $this->Form->input('image', array('type' => 'file')); ?>
+<?php echo $this->Form->end('Submit'); ?>
+
 <script type="text/javascript">
  $('#qlbhTable').fixheadertable({ 
 		height : 600,  
