@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    // $('.fancybox').fancybox({
-    //     height: 450,
-    //     width: 600
-    // });
+    $('.fancybox').fancybox({
+        height: 450,
+        width: 600
+    });
     $(".left>ul>li>a").click(function(){
         $(".left>ul>li>a").removeClass('selected');
         $(this).addClass('selected');   
