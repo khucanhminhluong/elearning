@@ -11,3 +11,81 @@
 2014-03-04 14:20:55 Error: [MissingControllerException] Controller class JsController could not be found.
 #0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-03-04 16:12:33 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 16:12:34 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 16:12:34 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-04 16:12:40 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 16:12:40 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 16:12:40 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-04 16:23:59 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 16:23:59 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 16:23:59 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-04 16:26:04 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 16:26:04 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 16:26:05 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-04 16:28:31 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 16:28:31 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 16:28:32 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-04 16:33:44 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 16:33:44 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 16:33:46 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
