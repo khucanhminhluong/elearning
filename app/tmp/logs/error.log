@@ -1,0 +1,13 @@
+2014-03-04 14:20:55 Error: Array
+(
+    [0] => Your_Page_Here
+)
+
+2014-03-04 14:20:55 Error: [MissingActionException] Action AdminController::img() could not be found.
+#0 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\elearning\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(AdminController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-04 14:20:55 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 C:\xampp\htdocs\elearning\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
