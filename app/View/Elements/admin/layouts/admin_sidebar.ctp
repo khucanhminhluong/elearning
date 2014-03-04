@@ -32,7 +32,7 @@
 					<a href="">Page layouts</a>
 				</li>
 				<li>
-					<a href="./system_properties.htm">System properties</a>
+					<a href="/elearning/admin/config">System properties</a>
 				</li>
 				<li>
 					<a href="" style="display: none">Footer</a>
@@ -57,30 +57,33 @@
 			</a>
 			<ul class="sub-menu">						
 				<li>
-					<a href="./students_control.htm">Students</a>
+					<a href="/elearning/admin/student">Students</a>
 				</li>
 				<li>
-					<a href="./teachers_control.htm">Teachers</a>
+					<a href="/elearning/admin/teacher">Teachers</a>
+				</li>
+				<li>
+					<a href="/elearning/admin/moderator">Moderator</a>
 				</li>
 			</ul>
 		</li>
 		
 		
 		<li>
-			<a href="./payment_summary.htm">
+			<a href="/elearning/admin/payment">
 			<i class="fa fa-bar-chart-o"></i> 
 			<span class="title">Payment Summary</span>
 			</a>
 		</li>
 			<li class="">
-			<a href="./uploaded_files.htm">
+			<a href="/elearning/admin/file">
 			<i class="fa fa-file-text"></i> 
 			<span class="title">Uploaded Files</span>
 			</a>
 		</li>
 		
 			<li class="">
-			<a href="./uploaded_lessons.htm">
+			<a href="/elearning/admin/lesson">
 			<i class="fa fa-book"></i> 
 			<span class="title">Uploaded Lessons</span>
 			</a>

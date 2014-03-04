@@ -1,5 +1,5 @@
 <?php
-$page_info_title = isset($page_info['title']) ? $page_info['title'] : "\$page_info_title is not set yet";
+$page_info_title = isset($page_info['title']) ? $page_info['title'] : "page_info_title is not set";
 $page_info_direct = isset($page_info['direct']) ? array($page_info['direct']) : array('Home', 'Your_Page_Here');
 ?>
 

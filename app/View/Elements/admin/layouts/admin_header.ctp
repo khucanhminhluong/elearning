@@ -16,7 +16,7 @@
 		<ul class="nav navbar-nav pull-right">
 			<!-- BEGIN NOTIFICATION DROPDOWN -->
 			<li class="dropdown" id="header_notification_bar">
-				<a href="/students_control.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+				<a href="//elearning/admin/student" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<i class="fa fa-warning"></i>
 				<span class="badge badge-success"><?php echo isset ($notifs) && count($notifs) > 0 ? count($notifs) : '0' ?></span>
 				</a>
@@ -39,14 +39,14 @@
 						</ul><div class="slimScrollBar" style="background-color: rgb(161, 178, 189); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 152.4390243902439px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div>
 					</li>
 					<li class="external">   
-						<a href="/students_control.html#">See all notifications <i class="fa fa-angle-right"></i></a>
+						<a href="//elearning/admin/student">See all notifications <i class="fa fa-angle-right"></i></a>
 					</li>
 				<?php } else { ?>
 					<li>
 						<p><?php echo __("You don't have any notification") ?></p>
 					</li>
 					<li class="external">   
-						<a href="/students_control.html#">See nearby notifications <i class="fa fa-angle-right"></i></a>
+						<a href="//elearning/admin/student">See nearby notifications <i class="fa fa-angle-right"></i></a>
 					</li>
 				<?php } ?>
 				</ul>
@@ -58,7 +58,7 @@
 			<li class="devider">&nbsp;</li>
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
-				<a href="/students_control.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+				<a href="//elearning/admin/student" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<img alt="" src="./img/no-avatar.jpg" class="avatar">
 
 				<span class="username">admin</span>

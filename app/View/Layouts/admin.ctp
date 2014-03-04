@@ -48,7 +48,7 @@
 		</div>
 		<!--Start container-->		
 		<div class="page-content">
-			<?php //echo $this->element('admin' . DS . 'page_info'); ?>
+			<?php echo $this->element('admin' . DS . 'page_breadcrumb'); ?>
 		    <?php echo $content_for_layout ?>
 		</div>
 		<!--End	container-->
