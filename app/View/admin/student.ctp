@@ -1,8 +1,45 @@
-<div class="row">
-	<div class="col-md-12">		
-		<div class="row" id="new-students-in-day">
-			<div class="col-md-6">
+<?php
+	$status = array('Deleted', 'Denied', 'Blocked', 'Pending', 'Active');
+	$status_label = array('default', 'danger', 'warning', 'info', 'success');
 
+	$new_students = array(
+	'total' => '4',
+	'data' => array(
+			array(
+				'FirstName' => 'ozawa',
+				'LastName' => 'obama',
+				'Username' => 'obamaozawa',
+				'Status' => 1
+				),
+			array(
+				'FirstName' => 'ozawa',
+				'LastName' => 'obama',
+				'Username' => 'obamaozawa',
+				'Status' => 3
+				),
+			array(
+				'FirstName' => 'ozawa',
+				'LastName' => 'obama',
+				'Username' => 'obamaozawa',
+				'Status' => 3
+				),
+			array(
+				'FirstName' => 'ozawa',
+				'LastName' => 'obama',
+				'Username' => 'obamaozawa',
+				'Status' => 4
+				),
+			)
+		);
+
+?>
+
+<?php echo $this->element('admin' . DS . 'page_breadcrumb'); ?>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="row" id="new-students">
+			<div class="col-md-6">
 				<div class="portlet">
 					<div class="portlet-title">
 						<div class="caption"><i class="fa fa-user"></i>New students today</div>
@@ -10,6 +47,7 @@
 							<a href="javascript:;" class="reload"></a>
 						</div>
 					</div>
+					<?php if (isset($new_students)) { ?>
 					<div class="portlet-body">
 						<div class="table-responsive">
 							<table class="table table-hover">
@@ -23,42 +61,26 @@
 									</tr>
 								</thead>
 								<tbody>
+									<?php foreach ($new_students['data'] as $key => $new_student) { ?>
 									<tr>
-										<td>1</td>
-										<td><a href="">Ozawa</a></td>
-										<td>Obama</td>
-										<td>obama123</td>
-										<td><span class="label label-sm label-danger">Denied</span></td>
+										<td><?php echo ($key + 1)?></td>
+										<td><a href=""><?php echo $new_student['FirstName']?></a></td>
+										<td><?php echo $new_student['LastName']?></td>
+										<td><?php echo $new_student['Username']?></td>
+										<td><span class="label label-sm label-<?php echo $status_label[$new_student['Status']]?> line-height-6"><?php echo $status[$new_student['Status']]?></span></td>
 									</tr>
-									<tr>
-										<td>2</td>
-										<td><a href="">Toan</a></td>
-										<td>Shinoda</td>
-										<td>toan123
-									</td>
-										<td><span class="label label-sm label-success">Approved</span></td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td><a href="">Mario</a></td>
-										<td>Ozawa</td>
-										<td>ozawa122</td>
-										<td><span class="label label-sm label-info">Pending</span></td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td><a href="">Sandy</a></td>
-										<td>Lim</td>
-										<td>sanlim</td>
-										<td><span class="label label-sm label-info">Pending</span></td>
-									</tr>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
+					<?php }  else { ?>
+					<div class="portlet-body">
+						There's new student registed today.
+					</div>
+					<?php } ?>
 				</div>
-				<!-- END SAMPLE TABLE PORTLET-->
-			</div>	
+			</div>
 		</div>
 
 		<div class="portlet">
@@ -126,191 +148,47 @@
 						<a href="">Z</a>&nbsp; 
 					
 						<a href="">Other</a>&nbsp; 
-					
 					</strong>
 				</div>
 			</div>
 			<div class="portlet-body flip-scroll" style="display: block; overflow: auto">
-				<table class="table table-bordered table-striped table-condensed flip-content">
+				<table class="table table-hover table-striped table-condensed">
 					<thead class="flip-content">
 						<tr>
 							<th>ID</th>
 							<th>Account</th><th>Email</th>
-							<th class="numeric">First name</th>
-							<th class="numeric">Last name</th>
+							<th class="numeric">Full name</th>
 							<th class="numeric">Birthday</th>
 							<th class="numeric">Gender</th>
 							<th class="numeric">Phone</th>
-							<th class="numeric">Created date</th><th class="numeric">Last Modify</th>
-							<th class="numeric"><a link="">Violations</a></th>
-							<th class="numeric"></th>
+							<th class="numeric"><a link>Created</a></th>
+							<th class="numeric"><a link>Modified</a></th>
+							<th class="numeric"><a link>Violated</a></th>
+							<th class="numeric">Status</th>
 						</tr>
 					</thead>
 					<tbody>
+					<?php if (isset($all_students)) { ?>
+						<?php foreach ($all_students['data'] as $key => $student) { ?>
 						<tr>
-							<td>0000</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0001</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0002</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0003</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0004</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right">5</td>
-							<td><span class="label label-sm label-danger">Blocked</span></td>
-							</tr>
-							<tr>
-							<td>0005</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0006</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0007</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right">1</td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0008</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right"></td>
-							<td><span class="label label-sm label-success">Active</span></td>
-							</tr>
-							<tr>
-							<td>0009</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right">8</td>
-							<td><span class="label label-sm label-danger">Blocked</span></td>
-							</tr>
-							<tr>
-							<td>0010</td>
-							<td><a href="">lucilucency</a></td>
-							<td>lucilucency@gmail.com</td>
-							<td>Khúc</td>
-							<td>Lượng</td>
-							<td>12/10/1991</td>
-							<td>Male</td>
-							<td>+841276016888</td>
-							<td>08/12/2013 20:20:01</td><td>08/12/2013 22:22:02</td>
-							<td class="align-right">7</td>
-							<td><span class="label label-sm label-danger">Blocked</span></td>
-							</tr><tr>
-							</tr>
+							<td><?php echo $student['user']['UserId']?></td>
+							<td><a href=""><?php echo $student['user']['Username']?></a></td>
+							<td><?php echo $student['user']['Email']?></td>
+							<td><?php echo $student['user']['FullName']?></td>
+							<td><?php echo $student['user']['Birthday']?></td>
+							<td><?php echo $student['user']['Gender'] == 0 ? __("Female") : __("Male")?></td>
+							<td><?php echo $student['user']['Phone']?></td>
+							<td><?php echo $student['user']['Created']?></td>
+							<td><?php echo $student['user']['Modified']?></td>
+							<td class="align-right"><?php echo $student['user']['Violated'] == 0 ? null : $student['user']['Violated']; ?></td>
+							<td><span class="label label-sm label-<?php echo $status_label[$student['user']['Status']]?> line-height-8" ><?php echo $status[$student['user']['Status']]?></span></td>
+						</tr>
+						<?php } ?>
+					<?php } ?>
 						
 					</tbody>
 				</table>
 			</div>
 		</div>
-
-
-
-		<!-- END SAMPLE TABLE PORTLET-->
-		<!-- BEGIN SAMPLE TABLE PORTLET-->
-		
-		<!-- END SAMPLE TABLE PORTLET-->
-		<!-- BEGIN SAMPLE TABLE PORTLET-->
-		
-		<!-- END SAMPLE TABLE PORTLET-->
-		<!-- BEGIN SAMPLE TABLE PORTLET-->
-		
-		<!-- END SAMPLE TABLE PORTLET-->
-		<!-- BEGIN SAMPLE TABLE PORTLET-->
-		
-		<!-- END SAMPLE TABLE PORTLET-->
 	</div>
 </div>

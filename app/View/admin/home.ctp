@@ -14,6 +14,7 @@
 	</div>
 </div>
 
+
 <?php 
 $paid = array('Unpaid', 'Paid');
 $paid_label = array('warning', 'success');
@@ -22,7 +23,7 @@ $transactions = array(
 	'total_student' => '1',
 	'total_teacher' => '1',
 	'total_profit' => '40000',
-	'info' => array(
+	'data' => array(
 			array(
 				'date' => date('d/m/Y', time()),
 				'lesson' => 'ls001',
@@ -59,7 +60,7 @@ $transactions = array(
 						<tbody>
 							<tr>
 								<td>Total transactions</td>
-								<td><?php echo isset($transactions) ? count($transactions['info']) : '0'?></td>
+								<td><?php echo isset($transactions) ? count($transactions['data']) : '0'?></td>
 							</tr>
 							<tr>
 								<td>Total students</td>
@@ -88,8 +89,8 @@ $transactions = array(
 							</tr>
 						</thead>
 						<tbody>
-						<?php if (isset($transactions['info'])) : ?>
-							<?php foreach ($transactions['info'] as $key => $transaction) : ?>
+						<?php if (isset($transactions['data'])) : ?>
+							<?php foreach ($transactions['data'] as $key => $transaction) : ?>
 							<tr>
 								<td><?php echo $key + 1 ?></td>
 								<td><?php echo $transaction['date'] ?></td>
