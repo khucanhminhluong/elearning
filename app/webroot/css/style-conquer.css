@@ -484,6 +484,11 @@ Custom label and badges
   padding: 1px 4px 1px 4px;
 }
 
+.label.label-xl {
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+}
+
 h1 .label,
 h2 .label,
 h3 .label,

@@ -1,9 +1,3 @@
-<?php
-	$status = array('Deleted', 'Active', 'Pending', 'Blocked', 'Denied');
-	$status_label = array('default', 'success', 'info', 'warning', 'danger');
-
-?>
-
 <?php echo $this->element('admin' . DS . 'page_breadcrumb'); ?>
 
 <?php if (!isset($studentInfo)) { ?>
@@ -18,7 +12,7 @@
 								<a href="javascript:;" class="reload"></a>
 							</div>
 						</div>
-						<?php if (isset($new_students)) { ?>
+						<?php if (isset($new_students) && $new_students['total'] != 0) { ?>
 						<div class="portlet-body">
 							<div class="table-responsive">
 								<table class="table table-hover">
@@ -35,9 +29,9 @@
 										<?php foreach ($new_students['data'] as $key => $new_student) { ?>
 										<tr>
 											<td><?php echo ($key + 1)?></td>
-											<td><a href=""><?php echo $new_student['user']['FullName']?></a></td>
-											<td><?php echo $new_student['user']['Username']?></td>
-											<td><?php echo $new_student['user']['Created']?></td>
+											<td><a href="/elearning/admin/student/<?php echo $new_student['user']['Username']?>"><?php echo $new_student['user']['FullName']?></a></td>
+											<td><a href="/elearning/admin/student/<?php echo $new_student['user']['Username']?>"><?php echo $new_student['user']['Username']?></a></td>
+											<td><?php echo $new_student['user']['created']?></td>
 											<td><span class="label label-sm label-<?php echo $status_label[$new_student['user']['Status']]?> line-height-6"><?php echo $status[$new_student['user']['Status']]?></span></td>
 										</tr>
 										<?php } ?>
@@ -47,7 +41,7 @@
 						</div>
 						<?php }  else { ?>
 						<div class="portlet-body">
-							There's new student registed today.
+							There isn't new student registed today.
 						</div>
 						<?php } ?>
 					</div>
@@ -123,6 +117,7 @@
 					</div>
 				</div>
 				<div class="portlet-body flip-scroll" style="display: block; overflow: auto">
+					<?php if (isset($all_students) && $all_students['total'] != 0) { ?>
 					<table class="table table-hover table-striped table-condensed">
 						<thead class="flip-content">
 							<tr>
@@ -139,26 +134,28 @@
 							</tr>
 						</thead>
 						<tbody>
-						<?php if (isset($all_students)) { ?>
 							<?php foreach ($all_students['data'] as $key => $student) { ?>
 							<tr>
 								<td><?php echo $student['user']['UserId']?></td>
-								<td><a href=""><?php echo $student['user']['Username']?></a></td>
+								<td><a href="/elearning/admin/student/<?php echo $student['user']['Username']?>"><?php echo $student['user']['Username']?></a></td>
 								<td><?php echo $student['user']['Email']?></td>
 								<td><?php echo $student['user']['FullName']?></td>
 								<td><?php echo $student['user']['Birthday']?></td>
 								<td><?php echo $student['user']['Gender'] == 0 ? __("Female") : __("Male")?></td>
 								<td><?php echo $student['user']['Phone']?></td>
-								<td><?php echo $student['user']['Created']?></td>
-								<td><?php echo $student['user']['Modified']?></td>
+								<td><?php echo $student['user']['created']?></td>
+								<td><?php echo $student['user']['modified']?></td>
 								<td class="align-right"><?php echo $student['user']['Violated'] == 0 ? null : $student['user']['Violated']; ?></td>
 								<td><span class="label label-sm label-<?php echo $status_label[$student['user']['Status']]?> line-height-8" ><?php echo $status[$student['user']['Status']]?></span></td>
 							</tr>
-							<?php } ?>
-						<?php } ?>
-							
+							<?php } ?>							
 						</tbody>
 					</table>
+					<?php }  else { ?>
+					<div class="portlet-body">
+						There isn't new student registed today.
+					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -179,12 +176,22 @@
 						<span class="margin-left-20"><?php echo $studentInfo['Phone'] ? $studentInfo['Phone'] : "Phone <i class='margin-left-5'> Updating... </i>" ?></span>
 				</div>
 			</div>
-			<button type="reset" class="btn btn-sm btn-warning cancel pull-right">
-			<i class="fa fa-exclamation-triangle"></i>
-			<span>
-				 Block this user
-			</span>
+			<?php if ($studentInfo['Status'] == 2) { ?>
+			<button class="btn btn-sm btn-info pull-right">
+				<i class="fa fa-exclamation-triangle"></i>
+				<span>
+					 Pending
+				</span>
 			</button>
+			<?php } ?>
+			<?php if ($studentInfo['Status'] == 0) { ?>
+			<label class="label label-xl label-default pull-right">
+				<i class="fa fa-exclamation-triangle"></i>
+				<span>
+					 Deleted
+				</span>
+			</label>
+			<?php } ?>
 		</div>
 	</div>
 
@@ -193,10 +200,10 @@
 			<div class="portlet">
 				<div class="nav portlet-title padding-top-8">
 					<div class="caption"><i class="fa fa-reorder"></i><?php echo $studentInfo['FullName'] ?>'s Info</div>
+					<?php if ($studentInfo['Status'] != 2) {?>
 					<div class="pull-right no-list-style">
 						<li class="dropdown menu-left" id="header_notification_bar">
-							<span href="#" class="btn btn-info btn-xs" id="edit" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"><i class="fa fa-cog"></i>Options</span>
-							
+							<span href="#" class="btn btn-info btn-xs" id="edit" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"><i class="fa fa-cog"></i>Options</span>							
 							<ul class="dropdown-menu extended" style="width: auto !important; margin-left: 77px; margin-top: -50px;">
 								<li>
 									<ul class="dropdown-menu-list no-space no-list-style">
@@ -221,6 +228,12 @@
 										<li>  
 											<a href="">
 											<span class="label label-sm label-icon label-danger"><i class="fa fa-ban"></i></span>
+											Block this user
+											</a>
+										</li>
+										<li>  
+											<a href="">
+											<span class="label label-sm label-icon label-default"><i class="fa fa-ban"></i></span>
 											Remove this user
 											</a>
 										</li>
@@ -229,6 +242,7 @@
 							</ul>
 						</li>
 					</div>
+					<?php } ?>
 				</div>
 				<div class="portlet-body user-info">
 					<div class="row">
@@ -237,36 +251,38 @@
 								<tbody>
 									<tr>
 										<td class="col-md-3">Username</td>
-										<td><?php echo $studentInfo['Username'] ?>							
+										<td><?php echo $studentInfo['Username'] ?><span class="config pull-right fa fa-edit pointer" data-toggle="modal" href="#portlet-config"></span></td>
+
 									</tr>
 									<tr>
 										<td>Gender</td>
-										<td><?php echo $studentInfo['Gender'] == 1 ? "Male" : "Female" ?></td>
+										<td><?php echo $studentInfo['Gender'] == 1 ? "Male" : "Female" ?><span class="config pull-right fa fa-edit pointer" data-toggle="modal" href="#portlet-config"></span></td>
 										
 									</tr>
+									<?php if ($studentInfo['Status'] != 2 && $studentInfo['Status'] != 0) { ?>
 									<tr>
-										<td>Member type</td>
-										<td><span class="label label-<?php echo $status_label[$studentInfo['Status']] ?> line-height-6"><?php echo $status[$studentInfo['Status']] ?></span></td>									
-									</tr>									
+										<td>Status</td>
+										<td><span class="label label-<?php echo $status_label[$studentInfo['Status']] ?> line-height-6"><?php echo $status[$studentInfo['Status']] ?></span></td>
+									</tr>		
+									<?php } ?>							
 									<tr>
 										<td>Date of birth</td>
-										<td><?php echo $studentInfo['Birthday'] ?><</td>
+										<td><?php echo $studentInfo['Birthday']  ? $studentInfo['Birthday'] : "<i>Updating...</i>"?><span class="config pull-right fa fa-edit pointer" data-toggle="modal" href="#portlet-config"></span></td>
 										
 									</tr>
 									<tr>
 										<td>Cash</td>
-										<td><?php echo $studentInfo['BankInfo'] ?></td>
+										<td><?php echo $studentInfo['BankInfo'] ? $studentInfo['BankInfo'] : "<i>Updating...</i>"?><span class="config pull-right fa fa-edit pointer" data-toggle="modal" href="#portlet-config"></span></td>
 									</tr>
 									<tr>
 										<td>Country</td>
-										<td>Viet Nam</td>
+										<td>Viet Nam<span class="config pull-right fa fa-edit pointer" data-toggle="modal" href="#portlet-config"></span></td>
 									</tr>
 									<tr>
 										<td>Address</td>
-										<td><?php echo $studentInfo['Address'] ?></td>
+										<td><?php echo $studentInfo['Address']  ? $studentInfo['Address'] : "<i>Updating...</i>"?><span class="config pull-right fa fa-edit pointer" data-toggle="modal" href="#portlet-config"></span></td>
 										
-									</tr>
-									
+									</tr>									
 								</tbody>
 							</table>
 						</div>

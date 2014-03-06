@@ -7,8 +7,6 @@
 	<?php 
 		// css file
 		echo $this->Html->css(array(
-			'fancybox/jquery.fancybox.css?v=2.1.5',
-
 			'font-awesome.min',
 			'bootstrap/bootstrap',
 			'uniform.default',
@@ -22,18 +20,19 @@
 		// Js file
 		echo $this->Html->script(array(
 			'jquery-1.9.0.min',
-			'jquery.fancybox.js?v=2.1.5',
-
 			'jquery-migrate-1.2.1.min',
 			'bootstrap',
 			'jquery.slimscroll.min',
 			'jquery.blockui.min',
 			'jquery.cookie.min',
-			'jquery.uniform.min',
-			'app(1)',
+			'app(1)',			
 		)); 
 	?>
 </head>
+<?php
+	$status = array('Deleted', 'Active', 'Pending', 'Blocked', 'Denied');
+	$status_label = array('default', 'success', 'info', 'warning', 'danger');
+?>
 <body class="page-header-fixed">
 	<!--<?php echo $this->element('sql_dump'); ?>-->
 		<!--Start header-->
@@ -49,6 +48,24 @@
 		<!--Start container-->		
 		<div class="page-content">
 		    <?php echo $content_for_layout ?>
+		    <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Notice!</h4>
+						</div>
+						<div class="modal-body">
+							this function is not supported now.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
 		</div>
 		<!--End	container-->
 		<!--Start footer-->
