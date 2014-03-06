@@ -489,3 +489,43 @@ Profile Page
   font-size:12px;
   margin-top:2px !important;
 }
+
+.user-info .gender {
+  display: inline-block; 
+  width: 20px; 
+  height: 20px; 
+  vertical-align: middle; 
+  margin-left: 10px; 
+  margin-right: 3px; 
+  margin-top: -5px;
+}
+
+.user-info .gender.male {
+  background: url('/elearning/img/gender.png') left center no-repeat transparent; 
+}
+
+.user-info .gender.female {
+  background: url('/elearning/img/gender.png') left center no-repeat transparent; 
+}
+
+.user-info .bday {
+  background: url('/elearning/img/bday.png') left center no-repeat transparent; 
+  display: inline-block; 
+  width: 20px; 
+  height: 20px; 
+  vertical-align: middle; 
+  margin-left: 10px; 
+  margin-right: 3px; 
+  margin-top: -5px;
+}
+
+.user-info .addr {
+  background: url('/elearning/img/addr.png') left center no-repeat transparent; 
+  display: inline-block; 
+  width: 20px; 
+  height: 20px; 
+  vertical-align: middle; 
+  margin-left: 10px; 
+  margin-right: 3px; 
+  margin-top: -5px;
+}

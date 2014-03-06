@@ -52,7 +52,7 @@
 		</div>
 		<!--End	container-->
 		<!--Start footer-->
-		<?php echo $this->element('admin' .DS . 'layouts' . DS . 'footer');?>
+		<?php echo $this->element('admin' .DS . 'layouts' . DS . 'admin_footer');?>
 		<!--End	footer-->
 	<!--End	body-->
 </body>
