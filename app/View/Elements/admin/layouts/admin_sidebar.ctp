@@ -15,79 +15,60 @@
 				</div>
 			</form>
 		</li>
-		<li class="start active open">
+		<li class="home active open">
 			<a href="/elearning/admin/home">
 			<i class="fa fa-home"></i> 
 			<span class="title">Home</span>
 			</a>
 		</li>
-		<li class="">
-			<a href="javascript:;">
-			<i class="fa fa-cogs"></i> 
-			<span class="title">Config</span>
-			<span class="arrow "></span>
-			</a>
-			<ul class="sub-menu">
-				<li>
-					<a href="">Page layouts</a>
-				</li>
-				<li>
-					<a href="/elearning/admin/config">System properties</a>
-				</li>
-				<li>
-					<a href="" style="display: none">Footer</a>
-				</li>
-				
-			</ul>
-		</li>
-		
-		<li class="">
-			<a href="javascript:;">
-			<i class="fa fa-table"></i> 
-			<span class="title">Form Control</span>
+
+
+		<li class="payment">
+			<a href="/elearning/admin/payment">
+			<i class="fa fa-bar-chart-o"></i> 
+			<span class="title">Payment Summary</span>
 			</a>
 		</li>
-		
-		
-		<li class="">
+
+		<li class="user">
 			<a href="javascript:;">
 			<i class="fa fa-user"></i> 
 			<span class="title">User Control</span>
 			<span class="arrow"></span>
 			</a>
 			<ul class="sub-menu">						
-				<li>
+				<li class="student">
 					<a href="/elearning/admin/student">Students</a>
 				</li>
-				<li>
+				<li class="teacher">
 					<a href="/elearning/admin/teacher">Teachers</a>
 				</li>
-				<li>
+				<li class="moderator">
 					<a href="/elearning/admin/moderator">Moderator</a>
 				</li>
 			</ul>
 		</li>
-		
-		
-		<li>
-			<a href="/elearning/admin/payment">
-			<i class="fa fa-bar-chart-o"></i> 
-			<span class="title">Payment Summary</span>
-			</a>
-		</li>
-			<li class="">
+
+		<li class="file">
 			<a href="/elearning/admin/file">
 			<i class="fa fa-file-text"></i> 
 			<span class="title">Uploaded Files</span>
 			</a>
 		</li>
 		
-			<li class="">
+		<li class="lesson">
 			<a href="/elearning/admin/lesson">
 			<i class="fa fa-book"></i> 
 			<span class="title">Uploaded Lessons</span>
 			</a>
 		</li>
+
+		<li class="config">
+			<a href="/elearning/admin/config">
+			<i class="fa fa-cogs"></i> 
+			<span class="title">System Config</span>
+			</a>
+		</li>	
 		
 	</ul>
 	<!-- END SIDEBAR MENU -->

@@ -43,7 +43,10 @@ class AdminController extends AppController {
 	}
 
 	public function student($username = null) {
+		$this->set('sidebar', array('user', 'student'));
+
 		if (!isset($username)) {
+
 			//title cho trang
 			$pageTitle = "admin/students";
 			$this->set(compact('pageTitle'));
@@ -117,6 +120,8 @@ class AdminController extends AppController {
 	} 
 
 	public function teacher($username = null) {
+		$this->set('sidebar', array('user', 'teacher'));
+
 		if (!isset($username)) {
 			//title cho trang
 			$pageTitle = "admin/teachers";

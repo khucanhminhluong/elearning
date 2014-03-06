@@ -78,6 +78,17 @@
 		jQuery(document).ready(function() {       
 		   App.init();
 		});
+
+		$(document).ready(function(){
+			$(".page-sidebar-menu>li").removeClass("active open");
+			$(".page-sidebar-menu>li>ul>li").removeClass("active open");	
+			<?php if (isset($sidebar)) { ?>
+				$(".page-sidebar-menu .<?php echo $sidebar[0]?>").addClass("active open");
+				$(".page-sidebar-menu .<?php echo $sidebar[0]?>>ul>li.<?php echo $sidebar[1]?>").addClass("active");
+			<?php } ?>
+		});
+			
+		
 	</script>
 </html>
 
