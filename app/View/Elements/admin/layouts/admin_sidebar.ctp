@@ -18,7 +18,7 @@
 		<li class="home active open">
 			<a href="/elearning/admin/home">
 			<i class="fa fa-home"></i> 
-			<span class="title">Home</span>
+			<span class="title">ホーム</span>
 			</a>
 		</li>
 
@@ -26,25 +26,25 @@
 		<li class="payment">
 			<a href="/elearning/admin/payment">
 			<i class="fa fa-bar-chart-o"></i> 
-			<span class="title">Payment Summary</span>
+			<span class="title">支払い合計</span>
 			</a>
 		</li>
 
 		<li class="user">
 			<a href="javascript:;">
 			<i class="fa fa-user"></i> 
-			<span class="title">User Control</span>
+			<span class="title">ユーザコントロール</span>
 			<span class="arrow"></span>
 			</a>
 			<ul class="sub-menu">						
 				<li class="student">
-					<a href="/elearning/admin/student">Students</a>
+					<a href="/elearning/admin/student">学生</a>
 				</li>
 				<li class="teacher">
-					<a href="/elearning/admin/teacher">Teachers</a>
+					<a href="/elearning/admin/teacher">先生</a>
 				</li>
 				<li class="moderator">
-					<a href="/elearning/admin/moderator">Moderator</a>
+					<a href="/elearning/admin/moderator">管理者</a>
 				</li>
 			</ul>
 		</li>
@@ -52,21 +52,21 @@
 		<li class="file">
 			<a href="/elearning/admin/file">
 			<i class="fa fa-file-text"></i> 
-			<span class="title">Uploaded Files</span>
+			<span class="title">アップロードされたファイル</span>
 			</a>
 		</li>
 		
 		<li class="lesson">
 			<a href="/elearning/admin/lesson">
 			<i class="fa fa-book"></i> 
-			<span class="title">Uploaded Lessons</span>
+			<span class="title">アップロードされた授業</span>
 			</a>
 		</li>
 
 		<li class="config">
 			<a href="/elearning/admin/config">
 			<i class="fa fa-cogs"></i> 
-			<span class="title">System Config</span>
+			<span class="title">システム設定</span>
 			</a>
 		</li>	
 		
