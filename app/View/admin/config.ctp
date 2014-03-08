@@ -4,7 +4,7 @@
 	<div class="col-md-6">
 		<div class="portlet">
 			<div class="portlet-title">
-				<div class="caption"><i class="fa fa-reorder"></i>IP Address</div>
+				<div class="caption"><i class="fa fa-reorder"></i>IP アドレス</div>
 				<div class="actions">
 					<a href="#" class="btn btn-info btn-xs"><i class="fa fa-plus"></i> Add</a>
 				</div>					
@@ -46,7 +46,7 @@
 		<div class="portlet">
 			<div class="portlet-title">
 				<div class="caption">
-					<i class="fa fa-reorder"></i>Config Table
+					<i class="fa fa-reorder"></i>設定テーブル
 				</div>
 			</div>
 			<div class="portlet-body">

@@ -7,7 +7,7 @@
 				<div class="col-md-6">
 					<div class="portlet">
 						<div class="portlet-title">
-							<div class="caption"><i class="fa fa-user"></i>New students today</div>
+							<div class="caption"><i class="fa fa-user"></i>今日中新しいユーザー</div>
 							<div class="tools">
 								<a href="javascript:;" class="reload"></a>
 							</div>
@@ -19,9 +19,9 @@
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>Full name</th>
-											<th>Username</th>
-											<th>Created</th>
+											<th>氏名</th>
+											<th>ユーザー名</th>
+											<th>登録日時</th>
 											<th></th>
 										</tr>
 									</thead>
@@ -41,7 +41,7 @@
 						</div>
 						<?php }  else { ?>
 						<div class="portlet-body">
-							There isn't new student registed today.
+							今日は新しいユーザーがいません。
 						</div>
 						<?php } ?>
 					</div>
@@ -50,7 +50,7 @@
 
 			<div class="portlet">
 				<div class="portlet-title">
-					<div class="caption">#All users</div>
+					<div class="caption">#すべてユーザー</div>
 					
 					<div class="tools">
 						<a href="javascript:;" class="reload"></a>
@@ -58,7 +58,7 @@
 					<div class="pull-right">
 						<strong style="font-size: 0.95em;">
 		
-							<a href="">All</a>&nbsp; 
+							<a href="">すべて</a>&nbsp;
 						
 							<a href="">A</a>&nbsp; 
 						
@@ -122,15 +122,15 @@
 						<thead class="flip-content">
 							<tr>
 								<th>ID</th>
-								<th>Account</th><th>Email</th>
-								<th class="numeric">Full name</th>
-								<th class="numeric">Birthday</th>
+								<th>ユーザー名</th><th>メール</th>
+								<th class="numeric">氏名</th>
+								<th class="numeric">生年月日</th>
 								<th class="numeric">Gender</th>
-								<th class="numeric">Phone</th>
-								<th class="numeric"><a link>Created</a></th>
+								<th class="numeric">電話番号</th>
+								<th class="numeric"><a link>登録日時</a></th>
 								<th class="numeric"><a link>Modified</a></th>
 								<th class="numeric"><a link>Violated</a></th>
-								<th class="numeric">Status</th>
+								<th class="numeric">状態</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -141,7 +141,7 @@
 								<td><?php echo $student['user']['Email']?></td>
 								<td><?php echo $student['user']['FullName']?></td>
 								<td><?php echo $student['user']['Birthday']?></td>
-								<td><?php echo $student['user']['Gender'] == 0 ? __("Female") : __("Male")?></td>
+								<td><?php echo $student['user']['Gender'] == 0 ? __("女") : __("男")?></td>
 								<td><?php echo $student['user']['Phone']?></td>
 								<td><?php echo $student['user']['created']?></td>
 								<td><?php echo $student['user']['modified']?></td>

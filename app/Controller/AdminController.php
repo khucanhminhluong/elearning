@@ -58,8 +58,8 @@ class AdminController extends AppController {
 			
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
-			$page_breadcrumb['title'] = 'Students';
-			$page_breadcrumb['direct'] = array('Home', 'Student');
+			$page_breadcrumb['title'] = '学生';
+			$page_breadcrumb['direct'] = array('ホーム', '学生');
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
@@ -114,7 +114,7 @@ class AdminController extends AppController {
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
 			$page_breadcrumb['title'] = $studentInfo['FullName'];
-			$page_breadcrumb['direct'] = array('Home', 'Student', $studentInfo['FullName']);
+			$page_breadcrumb['direct'] = array('ホーム', '学生', $studentInfo['FullName']);
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
@@ -135,8 +135,8 @@ class AdminController extends AppController {
 			
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
-			$page_breadcrumb['title'] = 'Teachers';
-			$page_breadcrumb['direct'] = array('Home', 'Teacher');
+			$page_breadcrumb['title'] = '先生';
+			$page_breadcrumb['direct'] = array('ホーム', '先生');
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
@@ -191,7 +191,7 @@ class AdminController extends AppController {
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
 			$page_breadcrumb['title'] = $teacherInfo['FullName'];
-			$page_breadcrumb['direct'] = array('Home', 'Teacher', $teacherInfo['FullName']);
+			$page_breadcrumb['direct'] = array('ホーム', '先生', $teacherInfo['FullName']);
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
@@ -216,7 +216,7 @@ class AdminController extends AppController {
 		//breadcrumb cho trang
 		$page_breadcrumb = array();
 		$page_breadcrumb['title'] = __('System Properties');
-		$page_breadcrumb['direct'] = array('Home', 'Config');
+		$page_breadcrumb['direct'] = array('ホーム', '設定');
 		$this->set(compact('page_breadcrumb'));
 		//end breadcrumb cho trang
 
