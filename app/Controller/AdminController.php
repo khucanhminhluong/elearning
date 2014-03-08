@@ -4,7 +4,7 @@
 */
 class AdminController extends AppController {
 	
-	public $uses = array('user');
+	public $uses = array('user', 'ip', 'config');
 	
 	function beforeFilter() {
         $pageTitle = 'E-Learning';
@@ -24,14 +24,18 @@ class AdminController extends AppController {
 
 	}
 
-	public function index() {
-		$pageTitle = 'Home';
-		$this->set(compact('pageTitle'));
+	public function index() {	
+
 	}
 
 
 	public function home() {
+		//title cho trang
+		$pageTitle = 'Home';
+		$this->set(compact('pageTitle'));
 
+		//sidebar
+		$this->set('sidebar', array('home'));
 	}
 
 	public function lesson() {
@@ -120,6 +124,7 @@ class AdminController extends AppController {
 	} 
 
 	public function teacher($username = null) {
+		//sidebar
 		$this->set('sidebar', array('user', 'teacher'));
 
 		if (!isset($username)) {
@@ -204,7 +209,26 @@ class AdminController extends AppController {
 	}
 
 	public function config() {
+		//title cho trang
+		$pageTitle = __('System Properties');
+		$this->set(compact('pageTitle'));
 
+		//breadcrumb cho trang
+		$page_breadcrumb = array();
+		$page_breadcrumb['title'] = __('System Properties');
+		$page_breadcrumb['direct'] = array('Home', 'Config');
+		$this->set(compact('page_breadcrumb'));
+		//end breadcrumb cho trang
+
+		//sidebar
+		$this->set('sidebar', array('config'));
+
+		//lay du lieu tu db 
+		$ip_addrs = $this->ip->find('all');
+		$this->set(compact('ip_addrs'));
+
+		$configs = $this->config->find('all');
+		$this->set(compact('configs'));
 	}
 }	
 ?>
