@@ -7,7 +7,7 @@
 		<form class="search-form search-form-header" role="form" action="">
 			<div class="input-icon right">
 				<i class="fa fa-search"></i>
-				<input type="text" class="form-control input-medium input-sm" name="query" placeholder="Search...">
+				<input type="text" class="form-control input-medium input-sm" name="query" placeholder="検索 ...">
 			</div>
 		</form>
 		<!-- END LOGO -->

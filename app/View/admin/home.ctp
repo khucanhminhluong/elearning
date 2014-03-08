@@ -2,12 +2,13 @@
 	<div class="col-md-12">
 		<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 		<h3 class="page-title">
-			<?php echo date('d/m/Y', time());?>
+			<!-- <?php echo date('d/m/Y', time());?> -->
+            <?php echo date('Y年 m月 d日', time());?>
 		</h3>
 		<ul class="page-breadcrumb breadcrumb">
 			<li>
 				<i class="fa fa-home"></i>
-				<a href="/elearning/admin/home">Home</a> 
+				<a href="/elearning/admin/home">ホーム</a>
 			</li>			
 		</ul>
 		<!-- END PAGE TITLE & BREADCRUMB-->
@@ -52,26 +53,26 @@ $transactions = array(
 		<div class="tab-pane active" id="tab_1_11">
 
 			<div class="nav portlet-title padding-top-8" style="padding:10px 10px 2px 10px;  height: 38px;">
-				<div class="caption"><i class="fa fa-calendar margin-right-5"></i><?php echo date('d-M-Y')?></div>
+				<div class="caption"><i class="fa fa-calendar margin-right-5"></i><?php echo date('Y年 m月 d日', time());?></div>
 			</div>
 			<div class="portlet-body">
 				<div class="table-responsive">
 					<table class="table margin-top-10" style="width: 300px">
 						<tbody>
 							<tr>
-								<td>Total transactions</td>
+								<td>すべて取引</td>
 								<td><?php echo isset($transactions) ? count($transactions['data']) : '0'?></td>
 							</tr>
 							<tr>
-								<td>Total students</td>
+								<td>すべて学生</td>
 								<td><?php echo isset($transactions) ? $transactions['total_student'] : '0' ?></td>
 							</tr>
 							<tr>
-								<td>Total teachers</td>
+								<td>すべて先生</td>
 								<td><?php echo isset($transactions) ? $transactions['total_teacher'] : '0' ?></td>
 							</tr>
 							<tr>
-								<td>Profits</td>
+								<td>総額</td>
 								<td><?php echo isset($transactions) ? $transactions['total_profit'] : '0' ?> VND</td>
 							</tr>
 						</tbody>
@@ -80,12 +81,12 @@ $transactions = array(
 					<table class="table table-striped table-bordered table-advance table-hover">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>Transaction time</th>
-								<th>Lesson</th>
-								<th>Student</th>
-								<th>Teacher</th>
-								<th><i class="fa fa-bookmark margin-right-5"></i>Amount (VND)</th>
+								<th>番号</th>
+								<th>日付</th>
+								<th>授業</th>
+								<th>学生</th>
+								<th>先生</th>
+								<th><i class="fa fa-bookmark margin-right-5"></i>学費 (VND)</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -115,7 +116,7 @@ $transactions = array(
 	<div class="portlet payment-summary">
 		<div class="portlet-title">
 			<div class="caption">
-				 <i class="fa fa-bookmark"></i> Overview
+				 <i class="fa fa-bookmark"></i> 概要
 			</div>
 			<div class="tools">
 				<a class="reload" href="javascript:;"></a>
@@ -125,7 +126,7 @@ $transactions = array(
 			<ul class="list-unstyled">
 				<li>
 					<span class="sale-info">
-						 TODAY  <i class="fa fa-img-up"></i>
+						 今日  <i class="fa fa-img-up"></i>
 					</span>
 					<span class="sale-num">
 						 240.000
@@ -133,7 +134,7 @@ $transactions = array(
 				</li>
 				<li>
 					<span class="sale-info">
-						 WEEKLY <i class="fa fa-img-down"></i>
+						 週間 <i class="fa fa-img-down"></i>
 					</span>
 					<span class="sale-num">
 						 880.000
@@ -141,7 +142,7 @@ $transactions = array(
 				</li>
 				<li>
 					<span class="sale-info">
-						 TOTAL 
+						 合計
 					</span>
 					<span class="sale-num">
 						 10.000.000
@@ -161,7 +162,7 @@ $transactions = array(
 
 	<div class="portlet">
 		<div class="portlet-title">
-			<div class="caption"><i class="fa fa-user"></i>New students</div>
+			<div class="caption"><i class="fa fa-user"></i>新しいユーザー</div>
 			<div class="tools">
 				<a href="javascript:;" class="reload"></a>
 			</div>
@@ -172,7 +173,7 @@ $transactions = array(
 					<thead>
 						<tr>
 							<th class="col-md-1">#</th>
-							<th>Username</th>
+							<th>ユーザー名</th>
 							<th class="col-md-3"></th>
 						</tr>
 					</thead>
@@ -180,22 +181,22 @@ $transactions = array(
 						<tr>
 							<td>1</td>
 							<td><a href="">obama123</a></td>
-							<td><span class="margin-left-3 label label-sm label-danger">Denied</span></td>
+							<td><span class="margin-left-3 label label-sm label-danger">打ち消す</span></td>
 						</tr>
 						<tr>
 							<td>2</td>
 							<td><a href="">toan123</a></td>
-							<td><span class="margin-left-3 label label-sm label-success">Approved</span></td>
+							<td><span class="margin-left-3 label label-sm label-success">承認</span></td>
 						</tr>
 						<tr>
 							<td>3</td>
 							<td><a href="">ozawa122</a></td>
-							<td><span class="margin-left-3 label label-sm label-info">Pending</span></td>
+							<td><span class="margin-left-3 label label-sm label-info">未確定</span></td>
 						</tr>
 						<tr>
 							<td>4</td>
 							<td><a href="">sanlim</a></td>
-							<td><span class="margin-left-3 label label-sm label-info">Pending</span></td>
+							<td><span class="margin-left-3 label label-sm label-info">未確定</span></td>
 						</tr>
 					</tbody>
 				</table>
