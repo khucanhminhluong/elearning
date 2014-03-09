@@ -7,7 +7,7 @@ class AdminController extends AppController {
 	public $uses = array('user', 'ip', 'config');
 	
 	function beforeFilter() {
-        $pageTitle = 'E-Learning';
+        $pageTitle = 'E-Learningシステム';
         $this->layout = 'admin';
         $status = array('Deleted', 'Active', 'Pending', 'Blocked', 'Denied');
 		$status_label = array('default', 'success', 'info', 'warning', 'danger');
@@ -210,12 +210,12 @@ class AdminController extends AppController {
 
 	public function config() {
 		//title cho trang
-		$pageTitle = __('System Properties');
+		$pageTitle = __('システム設定');
 		$this->set(compact('pageTitle'));
 
 		//breadcrumb cho trang
 		$page_breadcrumb = array();
-		$page_breadcrumb['title'] = __('System Properties');
+		$page_breadcrumb['title'] = __('システム設定');
 		$page_breadcrumb['direct'] = array('ホーム', '設定');
 		$this->set(compact('page_breadcrumb'));
 		//end breadcrumb cho trang

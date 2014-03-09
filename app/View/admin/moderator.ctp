@@ -4,10 +4,10 @@
 	<div class="col-md-6">
 		<div class="portlet">
 			<div class="nav portlet-title padding-top-8">
-				<div class="caption"># All</div>
+				<div class="caption"># すべての管理者</div>
 				<div class="pull-right">
 					<li class="dropdown" id="header_notification_bar">
-						<a href="#" class="btn btn-info btn-xs" id="add-mod" onclick="addModerator()"><i class="fa fa-plus"></i>Add</a>
+						<a href="#" class="btn btn-info btn-xs" id="add-mod" onclick="addModerator()"><i class="fa fa-plus"></i>追加</a>
 					</li>
 				</div>
 			</div>
@@ -17,9 +17,9 @@
 						<thead>
 							<tr>
 								<th>#</th>
-								<th class="col-md-4">Account</th>
-								<th>Created date</th>
-								<th class="col-md-3">Status</th>
+								<th class="col-md-4">ユーザー名</th>
+								<th>登録日時</th>
+								<th class="col-md-3">状態</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -27,25 +27,25 @@
 								<td>1</td>
 								<td><a href="">luongkam</a></td>
 								<td>Sun, 09 Feb 2014 15:16:10 GMT</td>
-								<td><label class="label label-sm label-success">Online</label></td>
+								<td><label class="label label-sm label-success">オンライン</label></td>
 							</tr>
 							<tr>
 								<td>2</td>
 								<td><a href="">tanvn</a></td>
 								<td>Sun, 09 Feb 2014 15:16:10 GMT</td>											
-								<td><label class="label label-sm label-info disabled">Offline</label></td>
+								<td><label class="label label-sm label-info disabled">オフライン</label></td>
 							</tr>
 							<tr>
 								<td>3</td>
 								<td><a href="">quanpd</a></td>
 								<td>Sun, 09 Feb 2014 15:16:10 GMT</td>											
-								<td><label class="label label-sm label-info disabled">Offline</label></td>
+								<td><label class="label label-sm label-info disabled">オフライン</label></td>
 							</tr>
 							<tr>
 								<td>4</td>
 								<td><a href="">hieumd</a></td>
 								<td>Sun, 09 Feb 2014 15:16:10 GMT</td>											
-								<td><label class="label label-sm label-info disabled">Offline</label></td>
+								<td><label class="label label-sm label-info disabled">オフライン</label></td>
 							</tr>
 						</tbody>
 					</table>
@@ -80,7 +80,7 @@
 		var time = now.toUTCString();
 		$("#moderators-table tr:last td:eq(1)").html('<a href="">' + $("#moderators-table tr:last td:eq(1) input").val() + '</a>');
 		$("#moderators-table tr:last td:eq(2)").html(time);
-		$("#moderators-table tr:last td:eq(3)").html('<label class="label label-sm label-info disabled">Offline</label>');
+		$("#moderators-table tr:last td:eq(3)").html('<label class="label label-sm label-info disabled">オフライン</label>');
 		$("#add-mod").removeClass("disabled");
 	}
 
