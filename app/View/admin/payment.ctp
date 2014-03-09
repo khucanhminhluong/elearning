@@ -1,7 +1,7 @@
 <?php echo $this->element('admin' . DS . 'page_breadcrumb'); ?>
 
 <div class="row padding-20">
-	<div class="tabbable tabbable-custom tabbable-custom-profile col-md-8">
+	<div class="tabbable tabbable-custom tabbable-custom-profile col-md-9">
 		<ul class="nav nav-tabs">
 			<li class="active">
 				<a href="#tab_1_11" data-toggle="tab">Payment Summary</a>
@@ -38,43 +38,6 @@
 							<option>11</option>
 							<option>12</option>
 						</select>
-
-						<span>Day: </span>
-						<select class="">
-							<option></option>
-							<option>01</option>
-							<option>02</option>
-							<option>03</option>
-							<option>04</option>
-							<option>05</option>
-							<option>06</option>
-							<option>07</option>
-							<option>08</option>
-							<option>09</option>
-							<option>10</option>
-							<option>11</option>
-							<option>13</option>
-							<option>14</option>
-							<option>15</option>
-							<option>16</option>
-							<option>17</option>
-							<option>18</option>
-							<option>19</option>
-							<option>20</option>
-							<option>21</option>
-							<option>21</option>
-							<option>22</option>
-							<option>23</option>
-							<option>24</option>
-							<option>25</option>
-							<option>26</option>
-							<option>27</option>
-							<option>28</option>
-							<option>29</option>
-							<option>30</option>
-							<option>31</option>
-						</select>
-
 					</div>
 				</div>
 				<div class="portlet-body">
@@ -285,6 +248,7 @@
 	<!-- END TABTABLE-->
 
 	<div class="col-md-3 pull-right margin-top-20">
+	<?php if (isset($trans)) { ?>
 		<div class="portlet payment-summary">
 			<div class="portlet-title">
 				<div class="caption">
@@ -298,18 +262,18 @@
 				<ul class="list-unstyled">
 					<li>
 						<span class="sale-info">
-							 TODAY  <i class="fa fa-img-up"></i>
+							 TODAY
 						</span>
 						<span class="sale-num">
-							 240.000
+							 <?php echo number_format($trans['today'])?>
 						</span>
 					</li>
 					<li>
 						<span class="sale-info">
-							 WEEKLY <i class="fa fa-img-down"></i>
+							 WEEKLY
 						</span>
 						<span class="sale-num">
-							 880.000
+							 <?php echo number_format($trans['lastweek'])?>
 						</span>
 					</li>
 					<li>
@@ -317,7 +281,7 @@
 							 TOTAL 
 						</span>
 						<span class="sale-num">
-							 10.000.000
+							 <?php echo number_format($trans['total'])?>
 						</span>
 					</li>
 					<li>
@@ -325,11 +289,15 @@
 							 EARNS
 						</span>
 						<span class="sale-num">
-							 4.000.000 VND
+							 <?php echo number_format($trans['earn'])?>
 						</span>
+					</li>
+					<li>
+						<span class="sale-num">(VND)</span>
 					</li>
 				</ul>
 			</div>
 		</div>
+	<?php } ?>
 	</div>	
 </div>

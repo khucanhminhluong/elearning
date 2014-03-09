@@ -315,25 +315,37 @@ Profile Page
   color:#169ef4;
 }
 
-/*profile sales summary*/
+/*sales summary*/
+
 .payment-summary ul {
-  margin-top:-12px;
+  margin-top:-8px;
+  margin-bottom: 0px;
 }
 .payment-summary li {
-  padding:10px 0;
+  padding:10px 0 8px 0;
   overflow:hidden;
   border-top:solid 1px #eee;
+  min-width: 190px;
 }
 
-.payment-summary li:first-child {
+.payment-summary li:first-child, .payment-summary li:last-child {
   border-top:none;
 }
+
+.payment-summary li:last-child {
+  padding: 0;
+  margin-top: -10px;
+}
+
 
 .payment-summary li .sale-info {
   float:left;
   color:#646464;
   font-size:14px;
   text-transform:uppercase;
+  width: 50px;
+  padding-left: 5px;
+  line-height: 1.8;
 }
 
 .payment-summary li .sale-num {
@@ -341,6 +353,7 @@ Profile Page
   color:#169ef4;
   font-size:20px;
   font-weight:300;
+  padding-right: 5px;
 }
 
 .payment-summary li span i {

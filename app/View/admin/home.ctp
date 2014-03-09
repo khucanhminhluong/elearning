@@ -112,7 +112,7 @@ $transactions = array(
 	</div>			
 </div>
 
-<div class="col-md-3 pull-right">
+<div class="col-md-3 pull-right no-padding-right">
 	<div class="portlet payment-summary">
 		<div class="portlet-title">
 			<div class="caption">
@@ -122,11 +122,11 @@ $transactions = array(
 				<a class="reload" href="javascript:;"></a>
 			</div>
 		</div>
-		<div class="portlet-body">
+		<div class="portlet-body" style="overflow: auto">
 			<ul class="list-unstyled">
 				<li>
 					<span class="sale-info">
-						 今日  <i class="fa fa-img-up"></i>
+						 今日
 					</span>
 					<span class="sale-num">
 						 240.000
@@ -134,7 +134,7 @@ $transactions = array(
 				</li>
 				<li>
 					<span class="sale-info">
-						 週間 <i class="fa fa-img-down"></i>
+						 週間
 					</span>
 					<span class="sale-num">
 						 880.000
@@ -153,8 +153,11 @@ $transactions = array(
 						 EARNS
 					</span>
 					<span class="sale-num">
-						 4.000.000 VND
+						 4.000.000
 					</span>
+				</li>
+				<li>
+					<span class="sale-num">(VND)</span>
 				</li>
 			</ul>
 		</div>
