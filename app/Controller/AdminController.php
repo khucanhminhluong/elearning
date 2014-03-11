@@ -4,9 +4,10 @@
 */
 class AdminController extends AppController {
 	
-	public $uses = array('user', 'ip', 'config', 'student_history');
-	
+	public $uses = array('User', 'Ip', 'Config', 'Transaction', 'Lesson');
+
 	function beforeFilter() {
+
         $pageTitle = 'E-Learning';
         $this->layout = 'admin';
         $status = array('Deleted', 'Active', 'Pending', 'Blocked', 'Denied');
@@ -46,6 +47,10 @@ class AdminController extends AppController {
 
 	}
 
+	public function login() {
+		
+	}
+
 	public function student($username = null) {
 		$this->set('sidebar', array('user', 'student'));
 
@@ -65,8 +70,8 @@ class AdminController extends AppController {
 
 			//lay du lieu tu database cho bang All students
 			$all_students = array(
-				'total' => $this->user->find("count", "UserId"),
-				'data' => $this->user->find('all', array(
+				'Total' => $this->User->find("count", "UserId"),
+				'Data' => $this->User->find('all', array(
 					'limit' => 10,
 					'conditions' => array(
 						'UserType' => 1
@@ -77,7 +82,7 @@ class AdminController extends AppController {
 
 			//lay du lieu tu database cho bang new students
 			$new_students = array(
-				'total' => $this->user->find("count", array(
+				'Total' => $this->User->find("count", array(
 					'conditions' => array(
 						'AND' => array(
 							'created >' => date('Y-m-d',strtotime("-1 days")),
@@ -85,7 +90,7 @@ class AdminController extends AppController {
 							)
 						)
 					)),
-				'data' => $this->user->find("all", array(
+				'Data' => $this->User->find("all", array(
 					'conditions' => array(
 						'AND' => array(
 							'created >' => date('Y-m-d',strtotime("-1 days")),
@@ -97,14 +102,7 @@ class AdminController extends AppController {
 			$this->set(compact('new_students'));
 
 		} else {
-			$studentInfo = $this->user->find("all", array(
-				'conditions' => array(
-					'AND' => array(
-						'UserName' => $username,
-						'UserType' => '1'
-						),						
-					),
-				))[0]['user'];
+			$studentInfo = $this->User->getUserInfo($username);
 
 			//title cho trang
 			$pageTitle = "student/" . $studentInfo['FullName'];
@@ -142,8 +140,8 @@ class AdminController extends AppController {
 
 			//lay du lieu tu database cho bang All teacher
 			$all_teachers = array(
-				'total' => $this->user->find("count", "UserId"),
-				'data' => $this->user->find('all', array(
+				'Total' => $this->User->find("count", "UserId"),
+				'Data' => $this->User->find('all', array(
 					'limit' => 10,
 					'conditions' => array(
 						'UserType' => 2
@@ -154,7 +152,7 @@ class AdminController extends AppController {
 
 			//lay du lieu tu database cho bang new teacher
 			$new_teachers = array(
-				'total' => $this->user->find("count", array(
+				'Total' => $this->User->find("count", array(
 					'conditions' => array(
 						'AND' => array(
 							'created >' => date('Y-m-d',strtotime("-1 days")),
@@ -162,7 +160,7 @@ class AdminController extends AppController {
 							)
 						)
 					)),
-				'data' => $this->user->find("all", array(
+				'Data' => $this->User->find("all", array(
 					'conditions' => array(
 						'AND' => array(
 							'created >' => date('Y-m-d',strtotime("-1 days")),
@@ -174,14 +172,7 @@ class AdminController extends AppController {
 			$this->set(compact('new_teachers'));
 
 		} else {
-			$teacherInfo = $this->user->find("all", array(
-				'conditions' => array(
-					'AND' => array(
-						'UserName' => $username,
-						'UserType' => '2'
-						),					
-					),
-				))[0]['user'];
+			$teacherInfo = $this->User->getUserInfo($username);
 
 			//title cho trang
 			$pageTitle = "teacher/" . $teacherInfo['FullName'];
@@ -219,8 +210,8 @@ class AdminController extends AppController {
 
 			//lay du lieu tu database cho bang All moderators
 			$all_moderators = array(
-				'total' => $this->user->find("count", "UserId"),
-				'data' => $this->user->find('all', array(
+				'Total' => $this->User->find("count", "UserId"),
+				'Data' => $this->User->find('all', array(
 					'limit' => 10,
 					'conditions' => array(
 						'UserType' => '3'
@@ -230,14 +221,7 @@ class AdminController extends AppController {
 			$this->set(compact('all_moderators'));
 
 		} else {
-			$moderatorInfo = $this->user->find("all", array(
-				'conditions' => array(
-					'AND' => array(
-						'UserName' => $username,
-						'UserType' => '3'
-						),						
-					),
-				))[0]['user'];
+			$moderatorInfo = $this->User->getUserInfo($username);
 
 			//title cho trang
 			$pageTitle = "moderator/" . $moderatorInfo['FullName'];
@@ -272,9 +256,27 @@ class AdminController extends AppController {
 		$this->set('sidebar', array('payment'));
 
 		//lay du lieu tu db 
-		$transactions = array();
-		$today = $this->student_history->find("all");
+		
+		$CONFIG_COURSE_FEE = $this->Config->getConfig("CourseFee") ?  $this->Config->getConfig("CourseFee") : 20000;
+		$CONFIG_SHARING_RATE = $this->Config->getConfig("SharingRate") ? $this->Config->getConfig("SharingRate") : 40;
+		$this->set(compact('CONFIG_SHARING_RATE'));
+		$today = $this->Transaction->getTransactions("Today");
+		$this->set(compact('today'));
 		$this->log($today);
+		$lastweek = $this->Transaction->getTransactions("LastWeek");
+		$total = $this->Transaction->getTransactions("All");
+		$overview = array(
+			'Today' => $today['Total'] * $CONFIG_COURSE_FEE,
+			'Lastweek' => $lastweek['Total'] * $CONFIG_COURSE_FEE,
+			'Total' => $total['Total'] * $CONFIG_COURSE_FEE,
+			'Earn' => $total['Total'] * $CONFIG_COURSE_FEE * $CONFIG_SHARING_RATE / 100,
+			);
+		$this->set(compact('overview'));
+
+		$payment_summary = $this->Transaction->getTransactions("LastMonth");
+		$payment_summary['Earn'] = $payment_summary['Total'] * $CONFIG_COURSE_FEE * $CONFIG_SHARING_RATE / 100;
+		$this->set(compact('payment_summary'));
+
 	}
 
 	public function config() {
@@ -293,11 +295,15 @@ class AdminController extends AppController {
 		$this->set('sidebar', array('config'));
 
 		//lay du lieu tu db 
-		$ip_addrs = $this->ip->find('all');
+		$ip_addrs = $this->Ip->find('all');
 		$this->set(compact('ip_addrs'));
 
-		$configs = $this->config->find('all');
+		$configs = $this->Config->find('all');
 		$this->set(compact('configs'));
+		$this->log($configs);
 	}
+
+	
+
 }	
 ?>

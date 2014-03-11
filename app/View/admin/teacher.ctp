@@ -12,7 +12,7 @@
 								<a href="javascript:;" class="reload"></a>
 							</div>
 						</div>
-						<?php if (isset($new_teachers) && $new_teachers['total'] != 0) { ?>
+						<?php if (isset($new_teachers) && $new_teachers['Total'] != 0) { ?>
 						<div class="portlet-body">
 							<div class="table-responsive">
 								<table class="table table-hover">
@@ -26,13 +26,13 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach ($new_teachers['data'] as $key => $new_teacher) { ?>
+										<?php foreach ($new_teachers['Data'] as $key => $new_teacher) { ?>
 										<tr>
 											<td><?php echo ($key + 1)?></td>
-											<td><a href="/elearning/admin/teacher/<?php echo $new_teacher['user']['Username']?>"><?php echo $new_teacher['user']['FullName']?></a></td>
-											<td><a href="/elearning/admin/teacher/<?php echo $new_teacher['user']['Username']?>"><?php echo $new_teacher['user']['Username']?></a></td>
-											<td><?php echo $new_teacher['user']['created']?></td>
-											<td><span class="label label-sm label-<?php echo $status_label[$new_teacher['user']['Status']]?> line-height-6"><?php echo $status[$new_teacher['user']['Status']]?></span></td>
+											<td><a href="/elearning/admin/teacher/<?php echo $new_teacher['User']['Username']?>"><?php echo $new_teacher['User']['FullName']?></a></td>
+											<td><a href="/elearning/admin/teacher/<?php echo $new_teacher['User']['Username']?>"><?php echo $new_teacher['User']['Username']?></a></td>
+											<td><?php echo $new_teacher['User']['created']?></td>
+											<td><span class="label label-sm label-<?php echo $status_label[$new_teacher['User']['Status']]?> line-height-6"><?php echo $status[$new_teacher['User']['Status']]?></span></td>
 										</tr>
 										<?php } ?>
 									</tbody>
@@ -117,7 +117,7 @@
 					</div>
 				</div>
 				<div class="portlet-body flip-scroll" style="display: block; overflow: auto">
-					<?php if (isset($all_teachers) && $all_teachers['total'] != 0) { ?>
+					<?php if (isset($all_teachers) && $all_teachers['Total'] != 0) { ?>
 					<table class="table table-hover table-striped table-condensed">
 						<thead class="flip-content">
 							<tr>
@@ -134,19 +134,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach ($all_teachers['data'] as $key => $teacher) { ?>
+							<?php foreach ($all_teachers['Data'] as $key => $teacher) { ?>
 							<tr>
-								<td><?php echo $teacher['user']['UserId']?></td>
-								<td><a href="/elearning/admin/teacher/<?php echo $teacher['user']['Username']?>"><?php echo $teacher['user']['Username']?></a></td>
-								<td><?php echo $teacher['user']['Email']?></td>
-								<td><?php echo $teacher['user']['FullName']?></td>
-								<td><?php echo $teacher['user']['Birthday']?></td>
-								<td><?php echo $teacher['user']['Gender'] == 0 ? __("Female") : __("Male")?></td>
-								<td><?php echo $teacher['user']['Phone']?></td>
-								<td><?php echo $teacher['user']['created']?></td>
-								<td><?php echo $teacher['user']['modified']?></td>
-								<td class="align-right"><?php echo $teacher['user']['Violated'] == 0 ? null : $teacher['user']['Violated']; ?></td>
-								<td><span class="label label-sm label-<?php echo $status_label[$teacher['user']['Status']]?> line-height-8" ><?php echo $status[$teacher['user']['Status']]?></span></td>
+								<td><?php echo $teacher['User']['UserId']?></td>
+								<td><a href="/elearning/admin/teacher/<?php echo $teacher['User']['Username']?>"><?php echo $teacher['User']['Username']?></a></td>
+								<td><?php echo $teacher['User']['Email']?></td>
+								<td><?php echo $teacher['User']['FullName']?></td>
+								<td><?php echo $teacher['User']['Birthday']?></td>
+								<td><?php echo $teacher['User']['Gender'] == 0 ? __("Female") : __("Male")?></td>
+								<td><?php echo $teacher['User']['Phone']?></td>
+								<td><?php echo $teacher['User']['created']?></td>
+								<td><?php echo $teacher['User']['modified']?></td>
+								<td class="align-right"><?php echo $teacher['User']['Violated'] == 0 ? null : $teacher['User']['Violated']; ?></td>
+								<td><span class="label label-sm label-<?php echo $status_label[$teacher['User']['Status']]?> line-height-8" ><?php echo $status[$teacher['User']['Status']]?></span></td>
 							</tr>
 							<?php } ?>							
 						</tbody>

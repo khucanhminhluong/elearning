@@ -12,7 +12,7 @@
 								<a href="javascript:;" class="reload"></a>
 							</div>
 						</div>
-						<?php if (isset($new_students) && $new_students['total'] != 0) { ?>
+						<?php if (isset($new_students) && $new_students['Total'] != 0) { ?>
 						<div class="portlet-body">
 							<div class="table-responsive">
 								<table class="table table-hover">
@@ -26,13 +26,13 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach ($new_students['data'] as $key => $new_student) { ?>
+										<?php foreach ($new_students['Data'] as $key => $new_student) { ?>
 										<tr>
 											<td><?php echo ($key + 1)?></td>
-											<td><a href="/elearning/admin/student/<?php echo $new_student['user']['Username']?>"><?php echo $new_student['user']['FullName']?></a></td>
-											<td><a href="/elearning/admin/student/<?php echo $new_student['user']['Username']?>"><?php echo $new_student['user']['Username']?></a></td>
-											<td><?php echo $new_student['user']['created']?></td>
-											<td><span class="label label-sm label-<?php echo $status_label[$new_student['user']['Status']]?> line-height-6"><?php echo $status[$new_student['user']['Status']]?></span></td>
+											<td><a href="/elearning/admin/student/<?php echo $new_student['User']['Username']?>"><?php echo $new_student['User']['FullName']?></a></td>
+											<td><a href="/elearning/admin/student/<?php echo $new_student['User']['Username']?>"><?php echo $new_student['User']['Username']?></a></td>
+											<td><?php echo $new_student['User']['created']?></td>
+											<td><span class="label label-sm label-<?php echo $status_label[$new_student['User']['Status']]?> line-height-6"><?php echo $status[$new_student['User']['Status']]?></span></td>
 										</tr>
 										<?php } ?>
 									</tbody>
@@ -56,7 +56,7 @@
 						<a href="javascript:;" class="reload"></a>
 					</div>
 					<div class="pull-right">
-						<strong style="font-size: 0.95em;">
+						<strong style="font-size: `.95em;">
 		
 							<a href="">All</a>&nbsp; 
 						
@@ -117,7 +117,7 @@
 					</div>
 				</div>
 				<div class="portlet-body flip-scroll" style="display: block; overflow: auto">
-					<?php if (isset($all_students) && $all_students['total'] != 0) { ?>
+					<?php if (isset($all_students) && $all_students['Total'] != 0) { ?>
 					<table class="table table-hover table-striped table-condensed">
 						<thead class="flip-content">
 							<tr>
@@ -134,19 +134,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach ($all_students['data'] as $key => $student) { ?>
+							<?php foreach ($all_students['Data'] as $key => $student) { ?>
 							<tr>
-								<td><?php echo $student['user']['UserId']?></td>
-								<td><a href="/elearning/admin/student/<?php echo $student['user']['Username']?>"><?php echo $student['user']['Username']?></a></td>
-								<td><?php echo $student['user']['Email']?></td>
-								<td><?php echo $student['user']['FullName']?></td>
-								<td><?php echo $student['user']['Birthday']?></td>
-								<td><?php echo $student['user']['Gender'] == 0 ? __("Female") : __("Male")?></td>
-								<td><?php echo $student['user']['Phone']?></td>
-								<td><?php echo $student['user']['created']?></td>
-								<td><?php echo $student['user']['modified']?></td>
-								<td class="align-right"><?php echo $student['user']['Violated'] == 0 ? null : $student['user']['Violated']; ?></td>
-								<td><span class="label label-sm label-<?php echo $status_label[$student['user']['Status']]?> line-height-8" ><?php echo $status[$student['user']['Status']]?></span></td>
+								<td><?php echo $student['User']['UserId']?></td>
+								<td><a href="/elearning/admin/student/<?php echo $student['User']['Username']?>"><?php echo $student['User']['Username']?></a></td>
+								<td><?php echo $student['User']['Email']?></td>
+								<td><?php echo $student['User']['FullName']?></td>
+								<td><?php echo $student['User']['Birthday']?></td>
+								<td><?php echo $student['User']['Gender'] == 0 ? __("Female") : __("Male")?></td>
+								<td><?php echo $student['User']['Phone']?></td>
+								<td><?php echo $student['User']['created']?></td>
+								<td><?php echo $student['User']['modified']?></td>
+								<td class="align-right"><?php echo $student['User']['Violated'] == 0 ? null : $student['User']['Violated']; ?></td>
+								<td><span class="label label-sm label-<?php echo $status_label[$student['User']['Status']]?> line-height-8" ><?php echo $status[$student['User']['Status']]?></span></td>
 							</tr>
 							<?php } ?>							
 						</tbody>

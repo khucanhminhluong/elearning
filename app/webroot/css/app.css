@@ -328,21 +328,24 @@ Profile Page
   min-width: 190px;
 }
 
-.payment-summary li:first-child, .payment-summary li:last-child {
+.payment-summary li:first-child {
   border-top:none;
 }
-
-.payment-summary li:last-child {
-  padding: 0;
-  margin-top: -10px;
-}
-
 
 .payment-summary li .sale-info {
   float:left;
   color:#646464;
   font-size:14px;
   text-transform:uppercase;
+  width: 50px;
+  padding-left: 5px;
+  line-height: 1.8;
+}
+
+.payment-summary li .sale-caption {
+  float:left;
+  color:#646464;
+  font-size:13px;
   width: 50px;
   padding-left: 5px;
   line-height: 1.8;

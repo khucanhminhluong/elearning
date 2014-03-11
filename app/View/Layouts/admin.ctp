@@ -84,7 +84,9 @@
 			$(".page-sidebar-menu>li>ul>li").removeClass("active open");
 			<?php if (isset($sidebar)) { ?>
 				$(".page-sidebar-menu .<?php echo $sidebar[0]?>").addClass("active open");
-				$(".page-sidebar-menu .<?php echo $sidebar[0]?>>ul>li.<?php echo isset($sidebar[1]) ? $sidebar[1] : null?>").addClass("active");
+				<?php if (isset($sidebar[1])) { ?>
+				$(".page-sidebar-menu .<?php echo $sidebar[0]?>>ul>li.<?php echo $sidebar[1]?>").addClass("active");
+				<?php } ?>
 			<?php } ?>
 		});
 			

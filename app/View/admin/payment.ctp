@@ -14,7 +14,7 @@
 			<div class="tab-pane active" id="tab_1_11">
 
 				<div class="nav portlet-title padding-top-8" style="padding:10px 10px 2px 10px;  height: 38px;">
-					<div class="caption"><i class="fa fa-calendar margin-right-5"></i> Jan 2014</div>
+					<div class="caption"><i class="fa fa-calendar margin-right-5"></i><?php echo date("M Y")?></div>
 					<div class="pull-right">
 						
 						<span>Year: </span>
@@ -46,27 +46,27 @@
 							<tbody>
 								<tr>
 									<td class="">From </td>
-									<td class="col-md-5">01 Jan 2014</td>
+									<td class="col-md-5"><?php echo date('01 M Y')?></td>
 								</tr>
 								<tr>
 									<td>To </td>
-									<td>31 Jan 2014</td>
+									<td><?php echo date('d M Y')?></td>
 								</tr>
 								<tr>
 									<td>Total transactions</td>
-									<td>8</td>
+									<td><?php echo $payment_summary['Total'] ?></td>
 								</tr>
 								<tr>
 									<td>Total students</td>
-									<td>4</td>
+									<td><?php echo $payment_summary['TotalStudent'] ?></td>
 								</tr>
 								<tr>
 									<td>Total teachers</td>
-									<td>3</td>
+									<td><?php echo $payment_summary['TotalTeacher'] ?></td>
 								</tr>
 								<tr>
 									<td>Profits</td>
-									<td>160.000 VND</td>
+									<td><?php echo $payment_summary['Earn'] ?> VND</td>
 								</tr>
 							</tbody>
 						</table>
@@ -85,70 +85,18 @@
 								</tr>
 							</thead>
 							<tbody>
+							<?php if (isset($payment_summary)) { ?>
+								<?php foreach ($payment_summary['Data'] as $key => $buff) { ?>
 								<tr>
-									<td>1</td>
-									<td>Tus Jan 28 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">luongkam</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
+									<td><?php echo $key + 1 ?></td>
+									<td><?php echo $buff['Transaction']['StartDate'] ?></td>
+									<td><?php echo $buff['Lesson']['Title'] ?></td>
+									<td><a href="/elearning/admin/student/<?php echo $buff['Student']['Username'] ?>"><?php echo $buff['Student']['Username'] ?></a></td>
+									<td><a href="/elearning/admin/teacher/<?php echo $buff['Lesson']['Author']['Username'] ?>"><?php echo $buff['Lesson']['Author']['Username'] ?></a></td>
+									<td class="align-right"><?php echo $buff['Transaction']['CourseFee'] ?><span class="margin-left-5 label label-<?php echo date($buff['Transaction']['ExpiryDate']) > date('Y-m-01') ? "warning" : "success"  ?> label-sm"><?php echo date($buff['Transaction']['ExpiryDate']) > date('Y-m-01') ? "Not paid" : "Paid"  ?></span></td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>Tus Jan 28 2014 14:48:06</td>
-									<td>mz003</td>
-									<td><a href="">tanvn</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Tus Jan 28 2014 14:48:06</td>
-									<td>mz007</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Mon Jan 27 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">hieumd</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>Mon Jan 27 2014 14:48:06</td>
-									<td>mz009</td>
-									<td><a href="">hieumd</a></td>
-									<td><a href="">def_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>Sun Jan 26 2014 06:48:06</td>
-									<td>mz003</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">ghj_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>Sun Jan 26 2014 06:48:06</td>
-									<td>mz005</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>Sun Jan 26 2014 06:48:06</td>
-									<td>mz005</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
+								<?php } ?>
+							<?php } ?>
 							</tbody>
 						</table>
 					</div>
@@ -173,70 +121,20 @@
 								</tr>
 							</thead>
 							<tbody>
+							<?php if (isset($today)) { ?>
+								<?php foreach ($today['Data'] as $key => $buff) { ?>
 								<tr>
-									<td>1</td>
-									<td>Sun Feb 08 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">luongkam</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
+									<td><?php echo $key + 1 ?></td>
+									<td><?php echo $buff['Transaction']['StartDate'] ?></td>
+									<td><?php echo $buff['Lesson']['Title'] ?></td>
+									<td><a href="/elearning/admin/student/<?php echo $buff['Student']['Username'] ?>"><?php echo $buff['Student']['Username'] ?></a></td>
+									<td><a href="/elearning/admin/teacher/<?php echo $buff['Lesson']['Author']['Username'] ?>"><?php echo $buff['Lesson']['Author']['Username'] ?></a></td>
+									<td class="align-right"><?php echo $buff['Transaction']['CourseFee'] ?><span class="margin-left-5 label label-<?php echo date($buff['Transaction']['ExpiryDate']) > date('Y-m-01') ? "warning" : "success"  ?> label-sm"><?php echo date($buff['Transaction']['ExpiryDate']) > date('Y-m-01') ? "Not paid" : "Paid"  ?></span></td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>Sun Feb 08 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">tanvn</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Sun Feb 08 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Sun Feb 08 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">hieumd</a></td>
-									<td><a href="">abc_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>Sun Feb 08 2014 14:48:06</td>
-									<td>mz005</td>
-									<td><a href="">hieumd</a></td>
-									<td><a href="">def_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>Sun Feb 08 2014 06:48:06</td>
-									<td>mz005</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">ghj_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>Sun Feb 08 2014 06:48:06</td>
-									<td>mz005</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">ghj_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>Sun Feb 08 2014 06:48:06</td>
-									<td>mz005</td>
-									<td><a href="">quanpd</a></td>
-									<td><a href="">ghj_sensei</a></td>
-									<td class="align-right">20.000 <span class="label label-success label-sm">Paid</span></td>
-								</tr>
+								<?php } ?>
+							<?php } else { ?>
+
+							<?php } ?>
 							</tbody>
 						</table>
 					</div>
@@ -248,7 +146,7 @@
 	<!-- END TABTABLE-->
 
 	<div class="col-md-3 pull-right margin-top-20">
-	<?php if (isset($trans)) { ?>
+	<?php if (isset($overview)) { ?>
 		<div class="portlet payment-summary">
 			<div class="portlet-title">
 				<div class="caption">
@@ -265,15 +163,15 @@
 							 TODAY
 						</span>
 						<span class="sale-num">
-							 <?php echo number_format($trans['today'])?>
+							 <?php echo number_format($overview['Today'])?>
 						</span>
 					</li>
 					<li>
 						<span class="sale-info">
-							 WEEKLY
+							 LASTWEEK
 						</span>
 						<span class="sale-num">
-							 <?php echo number_format($trans['lastweek'])?>
+							 <?php echo number_format($overview['Lastweek'])?>
 						</span>
 					</li>
 					<li>
@@ -281,7 +179,7 @@
 							 TOTAL 
 						</span>
 						<span class="sale-num">
-							 <?php echo number_format($trans['total'])?>
+							 <?php echo number_format($overview['Total'])?>
 						</span>
 					</li>
 					<li>
@@ -289,11 +187,16 @@
 							 EARNS
 						</span>
 						<span class="sale-num">
-							 <?php echo number_format($trans['earn'])?>
+							 <?php echo number_format($overview['Earn'])?>
 						</span>
 					</li>
 					<li>
-						<span class="sale-num">(VND)</span>
+						<span class="sale-caption" style = "width: 100px;">
+							 Sharing rate
+						</span>
+						<span class="sale-num" style="font-size: 14px;">
+							 <?php echo $CONFIG_SHARING_RATE?> %
+						</span>
 					</li>
 				</ul>
 			</div>

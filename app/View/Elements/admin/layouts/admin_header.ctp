@@ -59,7 +59,7 @@
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="//elearning/admin/student" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-				<img alt="" src="./img/no-avatar.jpg" class="avatar">
+				<?php echo $this->html->image('photo/no-avatar.jpg', array('class' => 'avatar'))?>
 
 				<span class="username">管理者</span>
 				<i class="fa fa-angle-down"></i>

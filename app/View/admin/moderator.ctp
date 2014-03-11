@@ -7,7 +7,7 @@
 				<div class="caption"># All</div>
 				<div class="pull-right">
 					<li class="dropdown" id="header_notification_bar">
-						<a href="#" class="btn btn-info btn-xs" id="add-mod" onclick="addModerator()"><i class="fa fa-plus"></i>Add</a>
+						<a href="#" class="btn btn-info btn-xs" id="add-new-mod" onclick="addModerator()"><i class="fa fa-plus"></i>Add</a>
 					</li>
 				</div>
 			</div>
@@ -57,9 +57,7 @@
 
 
 <script>
-	jQuery(document).ready(function() {       
-	   App.init();
-	});
+
 	function addModerator() {
 		var next = parseInt($("#moderators-table tr:last td:first").html()) + 1;
 		var buff = 		'<tr>'
@@ -68,7 +66,7 @@
 						+ '<td><input type="textarea" name="" rows="1" class="no-border" style="resize: none" id="" placeholder="password"></input></td>'
 						+ '<td><a href="#" class="btn btn-xs btn-success" onclick="submitNewMod()"><?php echo __("Save") ?></a><a href="#" class="btn btn-xs btn-warning margin-left-5" onclick="cancel()"><?php echo __("Cancel")?></a></td>'
 						+ '</tr>';
-		$("#add-mod").addClass("disabled");
+		$("#add-new-mod").addClass("disabled");
 		$("#moderators-table tr:last").after(buff);
 		$("#moderators-table tr:last td:eq(1) input").focus();
 	}
@@ -81,12 +79,12 @@
 		$("#moderators-table tr:last td:eq(1)").html('<a href="">' + $("#moderators-table tr:last td:eq(1) input").val() + '</a>');
 		$("#moderators-table tr:last td:eq(2)").html(time);
 		$("#moderators-table tr:last td:eq(3)").html('<label class="label label-sm label-info disabled">Offline</label>');
-		$("#add-mod").removeClass("disabled");
+		$("#add-new-mod").removeClass("disabled");
 	}
 
 	function cancel() {
 		$("#moderators-table tr:last").remove();		
-		$("#add-mod").removeClass("disabled");
+		$("#add-new-mod").removeClass("disabled");
 	}
 
 	$(document).ready(function(){
