@@ -7,7 +7,7 @@
 				<a href="#tab_1_11" data-toggle="tab">Payment Summary</a>
 			</li>
 			<li class="">
-				<a href="#tab_1_22" data-toggle="tab">Today</a>
+				<a href="#tab_1_22" data-toggle="tab">今日</a>
 			</li>
 		</ul>
 		<div class="tab-content">
@@ -17,13 +17,13 @@
 					<div class="caption"><i class="fa fa-calendar margin-right-5"></i><?php echo date("M Y")?></div>
 					<div class="pull-right">
 						
-						<span>Year: </span>
+						<span>年: </span>
 						<select class=" margin-right-3">
 							<option>2014</option>
 							<option>2013</option>
 						</select>
 
-						<span>Month: </span>
+						<span>月: </span>
 						<select class=" margin-right-3">
 							<option>01</option>
 							<option>02</option>
@@ -45,24 +45,24 @@
 						<table class="table margin-top-10" style="width: 300px">
 							<tbody>
 								<tr>
-									<td class="">From </td>
-									<td class="col-md-5"><?php echo date('01 M Y')?></td>
+									<td class="">から </td>
+									<td class="col-md-5">01 Jan 2014</td>
 								</tr>
 								<tr>
-									<td>To </td>
-									<td><?php echo date('d M Y')?></td>
+									<td>まで </td>
+									<td>31 Jan 2014</td>
 								</tr>
 								<tr>
 									<td>Total transactions</td>
 									<td><?php echo $payment_summary['Total'] ?></td>
 								</tr>
 								<tr>
-									<td>Total students</td>
-									<td><?php echo $payment_summary['TotalStudent'] ?></td>
+									<td>すべての学生</td>
+									<td>4</td>
 								</tr>
 								<tr>
-									<td>Total teachers</td>
-									<td><?php echo $payment_summary['TotalTeacher'] ?></td>
+									<td>すべての先生</td>
+									<td>3</td>
 								</tr>
 								<tr>
 									<td>Profits</td>
@@ -71,17 +71,17 @@
 							</tbody>
 						</table>
 
-						<a type="reset" class="btn btn-sm btn-info cancel pull-right" style="margin-top: -50px; margin-right: 0px"><i class="fa fa-save margin-right-5"></i><span>Save to file</span></a>
+						<a type="reset" class="btn btn-sm btn-info cancel pull-right" style="margin-top: -50px; margin-right: 0px"><i class="fa fa-save margin-right-5"></i><span>ファイルに保存</span></a>
 
 						<table class="table table-striped table-bordered table-advance table-hover">
 							<thead>
 								<tr>
 									<th>#</th>
 									<th>Transaction time</th>
-									<th>Lesson</th>
-									<th>Student</th>
-									<th>Teacher</th>
-									<th><i class="fa fa-bookmark margin-right-5"></i>Amount (VND)</th>
+									<th>授業</th>
+									<th>学生</th>
+									<th>先生</th>
+									<th><i class="fa fa-bookmark margin-right-5"></i>課金 (VND)</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -105,7 +105,7 @@
 			</div>
 			<div class="tab-pane" id="tab_1_22">
 				<div class="nav portlet-title padding-top-8" style="padding:10px 10px 2px 10px;  height: 38px;">
-					<div class="caption"><i class="fa fa-calendar margin-right-5"></i> 08 Feb 2014</div>
+					<div class="caption"><i class="fa fa-calendar margin-right-5"></i><?php echo date("d M Y")?></div>
 				</div>
 				<div class="portlet-body">
 					<div class="table-responsive">
@@ -150,7 +150,7 @@
 		<div class="portlet payment-summary">
 			<div class="portlet-title">
 				<div class="caption">
-					 <i class="fa fa-bookmark"></i> Overview
+					 <i class="fa fa-bookmark"></i> 概要
 				</div>
 				<div class="tools">
 					<a class="reload" href="javascript:;"></a>
@@ -160,7 +160,7 @@
 				<ul class="list-unstyled">
 					<li>
 						<span class="sale-info">
-							 TODAY
+							今日  <i class="fa fa-img-up"></i>
 						</span>
 						<span class="sale-num">
 							 <?php echo number_format($overview['Today'])?>
@@ -168,7 +168,7 @@
 					</li>
 					<li>
 						<span class="sale-info">
-							 LASTWEEK
+							週間 <i class="fa fa-img-down"></i>
 						</span>
 						<span class="sale-num">
 							 <?php echo number_format($overview['Lastweek'])?>
@@ -176,7 +176,7 @@
 					</li>
 					<li>
 						<span class="sale-info">
-							 TOTAL 
+							 合計
 						</span>
 						<span class="sale-num">
 							 <?php echo number_format($overview['Total'])?>
@@ -184,7 +184,7 @@
 					</li>
 					<li>
 						<span class="sale-info">
-							 EARNS
+							 課金
 						</span>
 						<span class="sale-num">
 							 <?php echo number_format($overview['Earn'])?>

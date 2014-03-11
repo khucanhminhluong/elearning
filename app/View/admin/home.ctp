@@ -86,7 +86,7 @@ $transactions = array(
 								<th>授業</th>
 								<th>学生</th>
 								<th>先生</th>
-								<th><i class="fa fa-bookmark margin-right-5"></i>学費 (VND)</th>
+								<th><i class="fa fa-bookmark margin-right-5"></i>課金 (VND)</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -150,7 +150,7 @@ $transactions = array(
 				</li>
 				<li>
 					<span class="sale-info">
-						 EARNS
+						 課金
 					</span>
 					<span class="sale-num">
 						 4.000.000

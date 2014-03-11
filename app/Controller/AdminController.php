@@ -7,8 +7,7 @@ class AdminController extends AppController {
 	public $uses = array('User', 'Ip', 'Config', 'Transaction', 'Lesson');
 
 	function beforeFilter() {
-
-        $pageTitle = 'E-Learning';
+        $pageTitle = 'E-Learningシステム';
         $this->layout = 'admin';
         $status = array('Deleted', 'Active', 'Pending', 'Blocked', 'Denied');
 		$status_label = array('default', 'success', 'info', 'warning', 'danger');
@@ -63,14 +62,18 @@ class AdminController extends AppController {
 			
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
-			$page_breadcrumb['title'] = 'Students';
-			$page_breadcrumb['direct'] = array('Home', 'Student');
+			$page_breadcrumb['title'] = '学生';
+			$page_breadcrumb['direct'] = array('ホーム', '学生');
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
 			//lay du lieu tu database cho bang All students
 			$all_students = array(
-				'Total' => $this->User->find("count", "UserId"),
+				'Total' => $this->User->find("count", array(
+					'conditions' => array(
+						'UserType' => 1,
+						),
+					)),
 				'Data' => $this->User->find('all', array(
 					'limit' => 10,
 					'conditions' => array(
@@ -112,7 +115,7 @@ class AdminController extends AppController {
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
 			$page_breadcrumb['title'] = $studentInfo['FullName'];
-			$page_breadcrumb['direct'] = array('Home', 'Student', $studentInfo['FullName']);
+			$page_breadcrumb['direct'] = array('ホーム', '学生', $studentInfo['FullName']);
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
@@ -132,15 +135,18 @@ class AdminController extends AppController {
 			//end title cho trang
 			
 			//breadcrumb cho trang
-			$page_breadcrumb = array();
-			$page_breadcrumb['title'] = __('Teachers');
-			$page_breadcrumb['direct'] = array('Home', 'Teacher');
+			$page_breadcrumb['title'] = '先生';
+			$page_breadcrumb['direct'] = array('ホーム', '先生');
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
 			//lay du lieu tu database cho bang All teacher
 			$all_teachers = array(
-				'Total' => $this->User->find("count", "UserId"),
+				'Total' => $this->User->find("count", array(
+					'conditions' => array(
+						'UserType' => 2,
+						),
+					)),
 				'Data' => $this->User->find('all', array(
 					'limit' => 10,
 					'conditions' => array(
@@ -182,7 +188,7 @@ class AdminController extends AppController {
 			//breadcrumb cho trang
 			$page_breadcrumb = array();
 			$page_breadcrumb['title'] = $teacherInfo['FullName'];
-			$page_breadcrumb['direct'] = array('Home', 'Teacher', $teacherInfo['FullName']);
+			$page_breadcrumb['direct'] = array('ホーム', '先生', $teacherInfo['FullName']);
 			$this->set(compact('page_breadcrumb'));
 			//end breadcrumb cho trang
 
@@ -210,7 +216,11 @@ class AdminController extends AppController {
 
 			//lay du lieu tu database cho bang All moderators
 			$all_moderators = array(
-				'Total' => $this->User->find("count", "UserId"),
+				'Total' => $this->User->find("count", array(
+					'conditions' => array(
+						'UserType' => '3',
+						),
+					)),
 				'Data' => $this->User->find('all', array(
 					'limit' => 10,
 					'conditions' => array(
@@ -219,6 +229,7 @@ class AdminController extends AppController {
 					))
 				);
 			$this->set(compact('all_moderators'));
+			$this->log($all_moderators);
 
 		} else {
 			$moderatorInfo = $this->User->getUserInfo($username);
@@ -281,13 +292,13 @@ class AdminController extends AppController {
 
 	public function config() {
 		//title cho trang
-		$pageTitle = __('System Properties');
+		$pageTitle = __('システム設定');
 		$this->set(compact('pageTitle'));
 
 		//breadcrumb cho trang
 		$page_breadcrumb = array();
-		$page_breadcrumb['title'] = __('System Properties');
-		$page_breadcrumb['direct'] = array('Home', 'Config');
+		$page_breadcrumb['title'] = __('システム設定');
+		$page_breadcrumb['direct'] = array('ホーム', '設定');
 		$this->set(compact('page_breadcrumb'));
 		//end breadcrumb cho trang
 
